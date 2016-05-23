@@ -1,0 +1,10 @@
+@import 'core/_setting.scss';
+@import 'core/_css3.scss';
+@import 'core/_grid.scss';
+@import 'core/_mixin.scss';
+
+%clear-border{
+  &:after,&:before{
+    height:0 !important;
+  }
+}

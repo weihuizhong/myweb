@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+@import "resident";
+
+.arch{
+  .del-btn{
+    border: 1px solid #e87751;
+    a {
+      color: #e87751;
+    }
+  }
+  tr{
+    &:hover:not(.change){
+      background-color: #fffaf8 !important;
+    }
+  }
+  .table-title{
+    text-align: left;
+    label{
+      position: relative;
+    }
+    .ins-input{
+      width: 220px;
+      padding: 0 30px 0px 5px;
+      height: 28px;
+      border: 1px solid $tableColor;
+    }
+    .icon-search{
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      cursor: pointer;
+    }
+  }
+
+  //换表
+  .change-ins-btn{
+    @extend .change-btn;
+  }
+}

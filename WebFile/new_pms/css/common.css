@@ -1,0 +1,288 @@
+html, body, .content, .container {
+  height: 100%;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  height: 50px;
+  line-height: 50px;
+  background-color: #f15a29;
+}
+
+.header .logo {
+  width: 200px;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+}
+
+.content {
+  background-color: #f7f7f7;
+}
+
+button {
+  outline: transparent;
+}
+
+.left-nav {
+  position: fixed;
+  left: 0;
+  width: 200px;
+  float: left;
+  text-align: center;
+  height: 100%;
+  background-color: white;
+}
+
+.left-nav ul {
+  height: 100%;
+  width: 100%;
+}
+
+.left-nav ul li {
+  height: 46px;
+  line-height: 46px;
+  color: #787878;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.param {
+  margin-left: 210px;
+  margin-right: 20px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.param .par-head {
+  height: 64px;
+  background-color: white;
+}
+
+.param .par-head h2 {
+  padding-left: 20px;
+  line-height: 64px;
+  color: #404040;
+  font-size: 26px;
+}
+
+.param .private-setting {
+  padding-top: 20px;
+  height: 100%;
+  padding-bottom: 180px;
+}
+
+.param ul {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.param ul li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 150px;
+}
+
+.hide {
+  display: none;
+}
+
+.btm-options {
+  box-sizing: border-box;
+  height: 100px;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+.btm-options button {
+  height: 34px;
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+.btm-options .exit {
+  background-color: transparent;
+  border: 1px solid #ffbd8d;
+  color: #ffbd8d;
+}
+
+.btm-options .back {
+  background-color: transparent;
+  border: 1px solid #f15a29;
+  color: #f15a29;
+  float: right;
+  margin-right: 20px;
+  display: none;
+}
+
+.btm-options .next {
+  background-color: #f15a29;
+  border: 1px solid #f15a29;
+  color: white;
+  float: right;
+}
+
+.btm-options .process {
+  height: 2px;
+  position: absolute;
+  top: -1px;
+  left: 0;
+  background-color: #f15a29;
+  width: 25%;
+}
+
+.option-btn button {
+  background-color: transparent;
+  padding: 6px 15px 6px 40px;
+  border: 1px solid #f15a29;
+  color: #f15a29;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+}
+
+.option-btn .import {
+  background-image: url(../img/icon/upload.png);
+}
+
+.option-btn .export {
+  background-image: url(../img/icon/down.png);
+}
+
+.data {
+  height: 100%;
+  margin-top: 50px;
+  background-color: white;
+}
+
+.data1 {
+  height: 100%;
+  margin-top: 30px;
+  background-color: white;
+  height: 100%;
+  padding-bottom: 180px;
+}
+
+.create {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.create button {
+  color: #f15a29;
+  background-color: transparent;
+  border: 1px solid #f15a29;
+  padding: 6px 15px;
+}
+
+.li-active {
+  position: relative;
+  color: #f15a29 !important;
+}
+
+.li-active:after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border: 5px solid transparent;
+  border-left-color: #f15a29;
+  left: 48px;
+  top: 18px;
+}
+
+.upload, .download {
+  float: left;
+  position: relative;
+}
+
+.upload {
+  margin-left: 30px;
+}
+
+.download {
+  margin-left: 10px;
+}
+
+#importHouse, #importHistory {
+  width: 155px;
+  height: 35px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  z-index: 100;
+}
+
+.tips {
+  float: left;
+  line-height: 35px;
+  margin-left: 20px;
+  position: relative;
+}
+
+.tips span {
+  width: 22px;
+  height: 22px;
+  background-color: #ffbd8d;
+  display: inline-block;
+  text-align: center;
+  color: white;
+  border-radius: 50%;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.tips span:hover + .tips-detail {
+  display: block;
+}
+
+.tips .tips-detail {
+  position: absolute;
+  border: 1px solid #ffbd8d;
+  padding: 15px;
+  width: 270px;
+  color: #808080;
+  top: 50px;
+  left: -20px;
+  background-color: white;
+  display: none;
+}
+
+.tips .tips-detail:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border: 1px solid #ffbd8d;
+  position: absolute;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  left: 20px;
+  top: -8px;
+  display: block;
+  background-color: white;
+  margin: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*# sourceMappingURL=../maps/common.css.map */

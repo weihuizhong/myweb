@@ -1,0 +1,49 @@
+.pb-footer .page-nav {
+  box-sizing: border-box;
+  position: static;
+  bottom: auto;
+  height: auto;
+  color: #5d5d5d;
+  padding: 6px;
+  background: #fff;
+  right: 0px;
+  left: 209px;
+  font-size: 14px;
+  border-top: none;
+}
+
+.pb-footer .page-nav:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.pb-footer .page-nav a, .pb-footer .page-nav span {
+  font-size: 14px;
+}
+
+.pb-footer .page-nav .pull-left {
+  float: left;
+  line-height: 34px;
+}
+
+.pb-footer .page-nav .pull-right {
+  float: right;
+  line-height: 34px;
+}
+
+.pb-footer .page-nav .pull-right input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.pb-footer .page-nav input {
+  display: inline-block;
+}
+
+.pb-footer .page-nav i, .pb-footer .page-nav .link a, .pb-footer .page-nav span, .pb-footer .page-nav em {
+  margin-right: 5px;
+  line-height: inherit;
+}
+
+/*# sourceMappingURL=../maps/perge.css.map */

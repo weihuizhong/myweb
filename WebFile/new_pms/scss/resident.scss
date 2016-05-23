@@ -1,0 +1,505 @@
+@charset "utf-8";
+@import "core/_icon";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Microsoft yahei';
+}
+
+$defaultColor: #383838;
+$tableColor: #d9d9d9;
+$backColor:#f7f7f7;
+
+%clearfix:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.arch {
+  padding-left: 11px;
+  padding-right: 20px;
+  height: 100%;
+  /*background: $backColor;*/
+  font-family: "Microsoft yahei", "sans-serif", "宋体";
+  color: $defaultColor;
+  display: flex;
+  flex-direction: column;
+
+  //设置基本样式
+  .btn-group {
+    @extend %clearfix;
+
+    li {
+      float: left;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  li, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .hidden {
+    display: none;
+  }
+  sub {
+    vertical-align: bottom;
+  }
+  input {
+    color: $defaultColor;
+  }
+  .table-title{
+    text-align: center;
+    /*padding:20px 0;*/
+    margin-bottom: 20px;
+    span{
+      color:#4d4d4d;
+    }
+    .qz-date {
+      width: 246px;
+      height: 30px;
+        border: 1px solid #b2b2b2;
+        background-image: url(../img/icon/days.png);
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-origin: content-box;
+        outline-color: transparent;
+        padding: 0 6px;
+        position: relative;
+    }
+}
+
+  //通用按钮
+  .arch-btn {
+    width: 70px;
+    text-align: center;
+    line-height: 28px;
+    margin-right: 12px;
+    font-size: 14px;
+    border-radius: 3px;
+    color: #fff;
+    border:1px solid transparent;
+
+    a {
+      color: #fff;
+      line-height: 25px;
+    }
+  }
+
+  //select
+  .y-select {
+    position: relative;
+    box-sizing: border-box;
+    width: 62px;
+    height: 18px;
+    border: 1px solid #57a3f1;
+    border-right-width: 16px;
+    margin: 0 8px;
+    font-size: 12px;
+    cursor: pointer;
+
+    i {
+      position: absolute;
+      right: -10px;
+      top: 7px;
+    }
+
+    .y-option-list {
+      display: none;
+      position: absolute;
+      top: 17px;
+      left: -1px;
+      width: calc(100% + 16px);
+      border: 1px solid $tableColor;
+      background-color: #fffaf8;
+      text-align: left;
+      text-indent: 12px;
+      z-index: 999;
+      li:hover {
+        background-color: #f6feff;
+      }
+    }
+  }
+
+  //标题 按钮
+  @at-root {
+    //标题
+    .arch-title {
+      h2 {
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 74px;
+        margin: 0;
+      }
+    }
+
+    //按钮组
+    .arch-btn-bar {
+      @extend %clearfix;
+      margin-bottom:10px;
+      position: relative;
+      .electricity{
+        position: absolute;
+        /*overflow: hidden;*/
+        height: 40px;
+        bottom: -10px;
+        li{
+          display: inline-block;
+          width: 90px;
+          text-align: center;
+          border: 1px solid #e6e6e6;
+          border-bottom: none;
+          height: 39px;
+          line-height: 40px;
+          background-color: #f2f2f2;
+          color: #383838;
+          font-size: 16px;
+          cursor: pointer;
+          z-index: 100;
+          &:nth-child(2){
+            margin-left: 3px;
+            left:93px;
+          }
+        }
+      }
+      @at-root {
+        //导如导出按钮
+        .import-export {
+          float: right;
+
+          li {
+            text-align: center;
+            line-height: 25px;
+            padding-right: 35px;
+            padding-left: 30px;
+            /*margin-right: 15px;*/
+            border: 1px solid #57a3f1;
+            border-radius: 3px;
+            position: relative;
+            font-size: 14px;
+            color: #2c2c2c;
+          }
+
+          i {
+            position: absolute;
+            right: 7px;
+            top: 7px;
+          }
+
+          a {
+            display: block;
+            line-height: 25px;
+          }
+        }
+
+        //增加修改按钮
+        .and-change {
+          float: right;
+          color: #fff;
+          li {
+            border-radius: 3px;
+          }
+
+          .add-btn {
+            background-color: #e87751;
+          }
+          .change-btn {
+            background-color: #57a3f1;
+          }
+          .disabled-btn {
+            background-color: $tableColor;
+            a {
+              cursor: default;
+            }
+          }
+          a {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+.table-active{
+  background-color: #57a3f1 !important;
+  border-color: #57a3f1 !important;
+  color: #fff !important;
+  bottom: -1px !important;
+  height: 40px !important;
+}
+
+  //主体
+  @at-root {
+    .arch-content {
+      display: flex;
+      margin-bottom: 10px;
+      flex: 1;
+    
+      //表格
+      $tableColor: $tableColor;
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        th {
+          white-space: nowrap;
+          height: 58px;
+          line-height: 58px;
+          font-size: 14px;
+          background-color: #f2f2f2;
+          font-weight: 600;
+          color:#383838;
+          text-align: center;
+        }
+
+        td {
+          height: 41px;
+          line-height: 41px;
+          width: 60px;
+          font-size: 12px;
+          box-sizing: border-box;
+          color:#383838;
+          vertical-align: middle;
+        }
+        .input-small {
+          box-sizing: border-box;
+          border: none;
+          background-color: transparent;
+          text-align: center;
+          vertical-align: middle;
+          line-height: 39px;
+        }
+
+        input {
+          width:100%;
+          height: 100%;
+          border: 2px solid #c9e4ff !important;
+          box-sizing: border-box;
+          display: block;
+          font-size: 12px;
+          color:#383838;
+        }
+        input[disabled] {
+          border: none !important;
+          cursor: pointer !important;
+        }
+      }
+
+      //右侧
+      @at-root {
+        .arch-table-wrap {
+          display: flex;
+          flex: 1;
+          overflow: hidden;
+          position: relative;
+          width: 100%;
+        }
+
+        //固定头部
+        @at-root {
+          .arch-table-header {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            z-index: 10;
+           
+          }
+        }
+
+        //表格
+        @at-root {
+          //表格
+          .arch-table {
+            flex: 1;
+            position: relative;
+            margin-bottom: 90px;
+            width: 100%;
+            overflow: auto;
+            /*border: 1px solid $tableColor;*/
+            td {
+              border: 1px solid $tableColor;
+              &:first-child {
+                border-left: none;
+              }
+            }
+
+            .my-table {
+              overflow-x: hidden;
+            }
+
+            @at-root {
+              .table-container {
+                position: relative;
+                text-align: center;
+                background-color: white;
+                /*border: 1px solid $tableColor;*/
+                border-bottom: none;
+                min-width: 1000px;
+              }
+
+              //左table
+              
+
+              //右table
+              .right-active {
+                position: relative;
+                background-color: #fff;
+                overflow:auto;
+                width: 100%;
+                max-height:100%;
+                box-sizing: border-box;
+                 border: 1px solid $tableColor;
+                table {
+                  width: 100%;
+                  th {
+                    &:last-child {
+                      border-right: 1px solid $tableColor;
+                    }
+                  }
+
+                  td {
+                    //表头设置宽度
+                    &:last-child {
+                      border-right: none;
+                    }
+                  }
+                }
+
+                tr {
+                  background-color: #fff;
+                  
+                  &:last-child, &:nth-last-child(2) {
+                    .y-option-list {
+                      bottom: 17px;
+                      top: auto;
+                    }
+                  }
+                }
+              }
+
+              .row-sel {
+                background-color: #fffaf8 !important;
+              }
+
+              tr {
+                &.change {
+                  /*background-color: #fff !important;*/
+                }
+                &.active {
+                  background-color: #fffaf8 !important;
+                }
+              }
+            }
+          }
+
+          //分页
+          @at-root {
+            .arch-footer {
+              @extend %clearfix;
+              position: absolute;
+              height: auto;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              padding-top: 1px;
+              *{
+                line-height: 34px;
+              }
+              .page-nav {
+                height: 34px;
+                position: static;
+                bottom: 30px;
+                color: #5d5d5d;
+                padding: 6px;
+                background: transparent;
+                left: 0;
+                border-top: none;
+                float: left;
+                font-size: 14px;
+                width: auto;
+              }
+              .page-nav i, .page-nav .link a, .page-nav span, .page-nav em {
+                display: block;
+                float: left;
+                color: #878787;
+                margin-right: 16px;
+              }
+              .page-nav span, .page-nav .link a:hover {
+                color: #f2793e;
+              }
+              .page-nav .jump {
+                color: #5d5d5d;
+              }
+              .page-nav .txt28 {
+                width: 36px;
+                height: 20px;
+                line-height: 20px;
+                margin: 0 6px;
+                text-align: center;
+                font-family: Arial;
+                vertical-align: middle;
+              }
+              .page-nav .btn_jump {
+                color: #fff;
+                width: 48px;
+                height: 24px;
+                line-height: 24px;
+                text-align: center;
+                background: #57A3F1;
+                border-radius: 2px;
+                margin-left: 10px;
+                display: inline-block;
+                font-size: 12px;
+                margin-right: 14px;
+              }
+              .pull-left {
+                float: left;
+              }
+              .pull-right {
+                float: left !important;
+              }
+              .save-cancel {
+                margin-top: 5px;
+              }
+              .import-export{
+                margin-top: 5px;
+              }
+            }
+          }
+
+          //保存和取消按钮
+          @at-root {
+            .save-cancel {
+              float: right;
+
+              @at-root {
+                .arch-save {
+                  background-color: #e87751 !important;
+                  a{
+                    color: #fff !important;
+                  }
+                }
+
+                .arch-cancel {
+                  border: 1px solid #e87751 !important;
+                  a{
+                    color: #e87751 !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

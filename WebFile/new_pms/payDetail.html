@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/tableCommon.css">
+  <script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/jquery.freezeheader.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $("table").freezeHeader();
+      function enter(el,tr) {
+        el.addClass('row-sel').siblings('tr').removeClass('row-sel');
+        var index = el.index();
+      }
+      $('body').delegate('tbody tr', 'click', function () {
+        enter($(this),'')
+      })
+    })
+  </script>
+  <style>
+    tbody tr:hover{
+      background-color: #ffeea9 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper-table">
+         <div class="table-title">
+           <h2>2015年5月<span class="qz-alert-red">(当前缴费周期)</span>业主缴<span class="qz-alert-red">(欠)</span>费明细</h2>
+            <input placeholder="用户名、手机号" class="qz-input" type="text">
+           <button>查询</button>
+         </div>
+     <div class="my-table" >
+         <div class="table-container">
+           <table>
+               <thead>
+                   <tr class="thead">
+                     <th >序号</th>
+                     <th>房号</th>
+                     <th>业主姓名</th>
+                     <th>联系电话</th>
+                     <th>费用周期</th>
+                     <th>合计缴(欠)费</th>
+                     <th>管理费</th>
+                     <th>垃圾处理费</th>
+                     <th>项目1</th>
+                     <th>项目2</th>
+                     <th>项目3</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                     <td>654 </td>
+                     <td>2ddddd  </td>
+                     <td> 56</td>
+                     <td>4dd </td>
+                     <td>5d </td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                   </tr>
+                   <tr>
+                     <td>6546546</td>
+                     <td>2</td>
+                     <td>3</td>
+                     <td>4</td>
+                     <td>5</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                   </tr>
+                   <tr>
+                     <td>6546546</td>
+                     <td>2</td>
+                     <td>3</td>
+                     <td>4</td>
+                     <td>5</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                   </tr>
+                   <tr>
+                     <td>6546546</td>
+                     <td>2</td>
+                     <td>3</td>
+                     <td>4</td>
+                     <td>5</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                   </tr>
+                   <tr>
+                     <td>6546546</td>
+                     <td>2</td>
+                     <td>3</td>
+                     <td>4</td>
+                     <td>5</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                   </tr>
+                   <tr>
+                     <td>6546546</td>
+                     <td>2</td>
+                     <td>3</td>
+                     <td>4</td>
+                     <td>5</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                   </tr>
+                   <tr>
+                     <td>6546546</td>
+                     <td>2</td>
+                     <td>3</td>
+                     <td>4</td>
+                     <td>5</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                   </tr>
+                   <tr>
+                     <td>6546546</td>
+                     <td>2</td>
+                     <td>3</td>
+                     <td>4</td>
+                     <td>5</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                   </tr>
+                   <tr>
+                     <td>6546546</td>
+                     <td>2</td>
+                     <td>3</td>
+                     <td>4</td>
+                     <td>5</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                   </tr>
+                   <tr>
+                     <td>6546546</td>
+                     <td>2</td>
+                     <td>3</td>
+                     <td>4</td>
+                     <td>5</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                     <td>asdf</td>
+                   </tr>
+                   <tr>
+                     <td class="total" colspan="4">上林苑小区合计：</td>
+                     <td></td>
+                     <td>4999</td>
+                     <td>888</td>
+                     <td>4999</td>
+                     <td>888</td>
+                     <td>4999</td>
+                     <td>888</td>
+                   </tr>
+               </tbody>
+           </table>
+         </div>
+    </div>
+  </div>
+  <div class="qz-page-nav">
+      <div class="pull-left link"> 
+        <a class="page-prev" href="javascript:void(0)" onclick="urlPage('2');return false;">上一页</a> 
+        <a class="num" href="javascript:void(0)" onclick="urlPage('1');return false;">1</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('2');return false;">2</a><span>3</span>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('4');return false;">4</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('5');return false;">5</a><a class="num" href="javascript:void(0)" onclick="urlPage('6');return false;">6</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('7');return false;">7</a><a class="num" href="javascript:void(0)" onclick="urlPage('8');return false;">8</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('9');return false;">9</a><a class="num" href="javascript:void(0)" onclick="urlPage('10');return false;">10</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('11');return false;">11</a>
+         <a class="page-next" href="javascript:void(0)" onclick="urlPage('4');return false;">下一页</a> 
+         <a class="page-last" href="javascript:void(0)" onclick="urlPage('1282');return false;">尾页</a>共 19228 条记录
+     </div>
+     <div class="pull-left jump">
+        <form method="get" action="/qz/index.php?s=/Home/Payment/index.html" data-nav="#Payment/index" id="mainPageForm">
+            <input type="hidden" name="p" value="3">
+            第<input type="text" name="p" class="txt28" id="jumpPage" onfocus="this.value=''" value="3">页
+           <a href="javascript:void(0)" class="btn_jump page_btm_jump">跳 转</a>
+       </form>                <script>
+            $(function(){
+                $('.page_btm_jump').click(function(){
+                    pageJump();
+                    return false;
+                });
+                $('#mainPageForm').submit(function(){
+                    pageJump();
+                    return false;
+                });
+            });
+                function pageJump(){
+                    var url  = $("#mainPageForm").attr('action');
+                    var str = $('#mainPageForm').serialize();
+                    if (url.indexOf('?') >= 0) {
+                        url += '&' + str;
+                    } else {
+                        url += '?' + str;
+                    }
+                    var data_nav = $("#mainPageForm").attr('data-nav');
+                    conGoToUrlFun(data_nav, url);
+                }
+                function urlPage(p){
+                   $('#jumpPage').val(p);
+                    pageJump();
+                }
+        </script> 
+     </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+@import 'core/_setting.scss';
+@import 'core/_css3.scss';
+@import 'core/_grid.scss';
+@import 'core/_mixin.scss';
+
+%clear-border{
+  &:after,&:before{
+    height:0 !important;
+  }
+}
+//flex container
+@mixin set-flex($orient:horizontal, $flow: row) {
+	display: flex;
+	-webkit-box-orient: $orient;
+	flex-flow: $flow;
+}
+%set-flex {
+	@include set-flex();
+}
+@mixin set-flex-align ($justify: flex-start, $align: flex-start) {
+	justify-content: $justify;
+	align-items: $align;
+}
+//flex items
+@mixin flex ($num:1) {
+	flex: $num;
+}
+@mixin flex-self($align: auto) {
+	align-self: $align;
+}
+%set-flex {
+	@include flex();
+}

@@ -1,0 +1,197 @@
+@charset "utf-8";
+
+@import "core/_icon";
+
+$color: #808080;
+$tableColor: #f2f2f2;
+$thWidthList: 10% 14% 14% 14% 14% 34%;
+
+body {
+  font-family: "Microsoft yahei", "sans-serif", "宋体";
+}
+
+%clearfix {
+  &:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+}
+
+.wm {
+  min-width: 600px;
+  padding: 26px 40px 40px 40px;
+  border: 1px solid $tableColor;
+  @extend %clearfix;
+
+  //添加按钮
+  .icon-add {
+    @extend %icon-circle-add;
+    margin: 0 auto;
+  }
+
+  //状态
+  .icon-status {
+    @extend %icon-circle-using;
+    margin: 0 auto;
+
+    &.ban {
+      @extend %icon-circle-ban;
+    }
+  }
+
+  @mixin headerIcon($url) {
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      margin-right: 10px;
+      vertical-align: bottom;
+      background-image: url(#{$url});
+    }
+  }
+
+  //绑定
+  .icon-ban {
+    @include headerIcon('../img/waterMessage/link.png');
+  }
+
+  //解绑
+  .icon-untie {
+    @include headerIcon('../img/waterMessage/lock.png');
+  }
+
+  //修改
+  .icon-modify {
+    @include headerIcon('../img/waterMessage/cange-book.png');
+  }
+}
+
+.wm-operation {
+  padding: 0;
+  margin-bottom: 12px;
+  margin-top: 0;
+  margin-right: 12px;
+  font-size: 14px;
+  float: right;
+  list-style: none;
+
+  color: $color;
+
+  li {
+    float: left;
+    position: relative;
+    margin-left: 35px;
+    cursor: pointer;
+    & + li:after {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 100%;
+      top: 0;
+      left: -17px;
+      background-color: $color;
+    }
+    &:hover {
+      color: #57a3f1;
+    }
+  }
+}
+
+//table
+.wm-table {
+  box-sizing: border-box;
+  width: 100%;
+  border-collapse: collapse;
+  color: $color;
+  font-size: 14px;
+  input {
+    padding: 3px;
+    width: 88%;
+    height: 2rem;
+    color: $color;
+    font-size: inherit;
+    border: none;
+    background-color: transparent;
+  }
+
+  tr {
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+
+    &.change, &:hover:not(:last-child) {
+      background-color: #fffaf8;
+    }
+  }
+
+  th {
+    background-color: $tableColor;
+    white-space: nowrap;
+    line-height: 40px;
+    text-align: center;
+
+    @for $i from 1 through length($thWidthList) {
+      &:nth-child(#{$i}) {
+        width: nth($thWidthList, $i);
+      }
+    }
+
+    @at-root {
+      .wm-table-title {
+        color: #e87751;
+      }
+    }
+  }
+  i {
+    vertical-align: middle;
+  }
+  td {
+    border: 1px solid $tableColor;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  input{
+    box-sizing: border-box;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  .wm-edit-div {
+    border-radius: 2px;
+    outline: none;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .wm-remark{
+    text-align: left;
+  }
+
+  .unsaved{
+    input{
+      outline: none;
+      cursor: text;
+      box-shadow: 0 0 2px 1px #57a3f1;
+      border: 2px solid #57a3f1\9;
+    }
+  }
+
+  //状态
+  .icon-status {
+    cursor: pointer;
+
+    &.ban {
+      @extend %icon-circle-ban;
+    }
+  }
+
+  //添加按钮
+  .icon-add {
+    cursor: pointer;
+  }
+}

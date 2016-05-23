@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水表管理</title>
+	<link rel="stylesheet" href="css/waterMessage.css">
+</head>
+<body>
+<div class="wm">
+	<ul class="wm-operation">
+		<li id="js-vm-ban" class="icon-ban">绑定</li>
+		<li id="js-vm-untie" class="icon-untie">解绑</li>
+		<li id="js-vm-modify" class="icon-modify">修改</li>
+	</ul>
+	<table class="wm-table">
+		<thead>
+		<tr>
+			<th>编号</th>
+			<th class="wm-table-title">水表管理</th>
+			<th>分摊比例</th>
+			<th>倍率</th>
+			<th>状态</th>
+			<th>备注</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td class="num">1</td>
+			<td>
+				<input class="wm-edit-div" disabled/>
+			</td>
+			<td>
+				<input class="wm-edit-div" disabled/>
+			</td>
+			<td>
+				<input class="wm-edit-div" disabled/>
+			</td>
+			<td><i class="icon-status ban"></i></td>
+			<td><input type="text" placeholder="编辑备注"></td>
+		</tr>
+		<tr>
+			<td class="num">2</td>
+			<td>
+				<input class="wm-edit-div" disabled/>
+			</td>
+			<td>
+				<input class="wm-edit-div" disabled/>
+			</td>
+			<td>
+				<input class="wm-edit-div" disabled/>
+			</td>
+			<td><i class="icon-status"></i></td>
+			<td><input type="text" placeholder="编辑备注"></td>
+		</tr>
+		<tr>
+			<td class="num">3</td>
+			<td>
+				<input class="wm-edit-div" disabled/>
+			</td>
+			<td>
+				<input class="wm-edit-div" disabled/>
+			</td>
+			<td>
+				<input class="wm-edit-div" disabled/>
+			</td>
+			<td><i class="icon-status"></i></td>
+			<td><input type="text" placeholder="编辑备注"></td>
+		</tr>
+		<tr>
+			<td class="num">4</td>
+			<td>
+				<input class="wm-edit-div" disabled/>
+			</td>
+			<td>
+				<input class="wm-edit-div" disabled/>
+			</td>
+			<td>
+				<input class="wm-edit-div" disabled/>
+			</td>
+			<td><i class="icon-status"></i></td>
+			<td><input class="wm-remark" type="text" placeholder="编辑备注"></td>
+		</tr>
+		<tr>
+			<td><i class="icon-add"></i></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		</tbody>
+		<!--添加模块-->
+		<script type="text/x-handlebars-template" id="vm-add-template">
+			<tr class="unsaved change">
+				<td class="num">{{index}}</td>
+				<td>
+					<input class="wm-edit-div">
+				</td>
+				<td>
+					<input class="wm-edit-div">
+				</td>
+				<td>
+					<input class="wm-edit-div">
+				</td>
+				<td><i class="icon-status"></i></td>
+				<td><input class="wm-remark" type="text" placeholder="编辑备注"></td>
+			</tr>
+		</script>
+	</table>
+</div>
+<script src="js/vendor/jquery-1.11.3.min.js"></script>
+<script>
+	(function () {
+		var vmModifyAndSave = $('#js-vm-modify');
+
+		//选择
+		function selectTr() {
+			var tr = $('tr');
+			tr.off('click');
+			tr.click(function () {
+				//是否未保存
+				if ($(this).hasClass('unsaved')) {
+					vmModifyAndSave.text('保存');
+				} else {
+					vmModifyAndSave.text('修改');
+				}
+
+				$(this).not(':last-child').addClass('change').siblings().removeClass('change');
+				return false;
+			});
+		}
+
+		selectTr();
+
+		//点击td
+		function focusTd() {
+			$('td:not(.unsaved)').off('click');//移除事件
+
+			$('.unsaved td').on('click', function () {
+				$(this).find('.wm-edit-div').focus();
+				$(this).find('input').focus();
+
+				//修改icon
+				var icon = $(this).find('i');
+				if (icon.hasClass('ban')) {
+					icon.removeClass('ban');
+				} else {
+					icon.addClass('ban');
+				}
+			});
+		}
+
+		//点击修改或保存
+		vmModifyAndSave.click(function () {
+			var changeTr = $('tbody .change'); //选中的tr
+
+			//修改
+			if (!changeTr.hasClass('unsaved')) {
+
+				if (changeTr.length <= 0) {
+					alert('请选择一行');
+				} else {
+					changeTr.find('.wm-edit-div').attr('disabled', false);
+					vmModifyAndSave.text('保存');
+					changeTr.addClass('unsaved');
+					focusTd();
+				}
+
+			} else { //保存
+				changeTr.find('.wm-edit-div').attr('disabled', true);
+				vmModifyAndSave.text('修改');
+				$('tr').removeClass('unsaved');
+				focusTd();
+			}
+
+			return false;
+		});
+
+		//解绑
+		$('#js-vm-untie').click(function () {
+			var changeTr = $('tbody .change'); //选中的tr
+			if (changeTr.length <= 0) {
+				alert('请选择一行');
+			}
+			changeTr.remove();
+
+			//重新排序
+			var num = $('.num');
+			console.log(num);
+			for (var i = 0; i < num.length; i++) {
+				num.eq(i).text(i + 1);
+			}
+		});
+
+		//添加
+		(function vmAddTr() {
+			var html = $('#vm-add-template').html();
+			//添加
+			$('.icon-add').click(function () {
+				var temp = null;
+				var table = $('.wm-table tbody');
+				var len = table.find('tr').length;
+
+				vmModifyAndSave.html('保存');
+				$('.change').removeClass('change');
+
+				temp = html.replace('{{index}}', len); //修改序号
+				table[0].insertBefore($(temp)[0], table[0].children[len - 1]);
+
+				//重置
+				selectTr();
+				focusTd();
+				return false;
+			});
+		})();
+	})();
+</script>
+</body>
+</html>

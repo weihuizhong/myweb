@@ -1,0 +1,286 @@
+.personal-setting .btn-group:after, .ticket-setting:after, .person-cost:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+input::-ms-clear, input::-ms-reveal {
+  display: none;
+}
+
+.personal-center {
+  font-size: 14px;
+  padding-bottom: 60px;
+}
+
+.personal-setting {
+  padding: 0 30px;
+  height: 100%;
+  min-width: 780px;
+  font-family: "Microsoft Yahei";
+  color: #333333;
+  overflow: hidden;
+}
+
+.personal-setting .btn-group li {
+  float: left;
+}
+
+.personal-setting .btn-group a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.personal-setting li, .personal-setting ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.personal-setting input {
+  color: #333333;
+}
+
+.personal-setting .pb-btn {
+  padding: 0 20px 0 20px;
+  text-align: center;
+  line-height: 28px;
+  margin-right: 12px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.personal-setting .pb-btn a {
+  color: inherit;
+}
+
+.personal-setting h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.personal-setting .input-area {
+  margin-bottom: 5px;
+}
+
+.personal-setting .input-area label {
+  width: 126px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 10px;
+  font-weight: normal;
+  color: #666666;
+}
+
+.personal-setting .input-area input, .personal-setting .input-area select {
+  height: 26px;
+  border: 1px solid #d9d9d9;
+  color: #666;
+  padding: 0;
+}
+
+.personal-setting .person-code {
+  overflow: hidden;
+}
+
+.personal-setting .person-code p span {
+  color: #b2b2b2;
+  display: inline-block;
+  padding-right: 16px;
+  position: relative;
+  cursor: pointer;
+}
+
+.personal-setting .person-code p span:after {
+  content: '';
+  height: 0;
+  width: 0;
+  border: 5px solid transparent;
+  border-top-color: #808080;
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  margin-top: -3px;
+}
+
+.personal-setting .person-code p .expend-setting:after {
+  border-left-color: #808080;
+  border-top-color: transparent;
+  margin-top: -5px;
+}
+
+.personal-setting .person-code .input-area {
+  position: relative;
+  width: 340px;
+}
+
+.personal-setting .person-code .input-area input {
+  width: 200px;
+}
+
+.personal-setting .person-code .input-area .input-eyes {
+  display: none;
+  width: 14px;
+  height: 12px;
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  margin-top: -6px;
+  z-index: 10;
+  background-image: url(../img/payCenter/eyes1.png);
+  background-repeat: no-repeat;
+}
+
+.personal-setting .person-code .input-area .dis-eyes {
+  background-image: url(../img/payCenter/eyes.png) !important;
+}
+
+.personal-setting .company-setting .input-area input {
+  width: 275px;
+}
+
+.personal-setting .ticket-setting .input-area input, .personal-setting .ticket-setting .input-area select {
+  width: 164px;
+}
+
+.ticket-setting .code-input, .person-cost .code-input {
+  float: left;
+}
+
+.ticket-setting .code-input li, .person-cost .code-input li {
+  height: 26px;
+  line-height: 26px;
+}
+
+.ticket-setting .code-input li input, .person-cost .code-input li input {
+  margin: 0;
+  vertical-align: middle;
+}
+
+.person-cost .code-input {
+  margin-left: 50px;
+}
+
+.person-cost div.code-input input {
+  width: 74px;
+  border: 1px solid #d9d9d9;
+  padding: 0;
+  height: 26px;
+}
+
+.person-cost ul.code-input label {
+  position: relative;
+  padding-left: 20px;
+}
+
+.person-cost ul.code-input label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #B5B5B5;
+  margin: 0 auto;
+}
+
+.person-cost ul.code-input input[type=checkbox] {
+  display: none;
+}
+
+.person-cost ul.code-input input[type=checkbox]:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  background-image: url(../img/icon/icon-checked.png) !important;
+  background-color: transparent;
+}
+
+.person-cost label {
+  font-weight: normal;
+  color: #666;
+}
+
+.person-message .code-input {
+  margin-left: 50px;
+  color: #666;
+}
+
+.person-message .code-input input {
+  border: 1px solid #d9d9d9;
+  padding: 0;
+}
+
+.expire-remind {
+  color: #666;
+}
+
+.expire-remind input {
+  width: 54px;
+  height: 26px;
+  margin: 0 10px;
+  padding: 0 3px;
+  text-align: center;
+}
+
+.person-message input {
+  width: 54px;
+  height: 26px;
+  margin: 0 10px;
+}
+
+.qz-person-header h2 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 74px;
+  margin: 0;
+  text-align: left;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.person-btn-group {
+  margin-top: 30px;
+}
+
+.person-btn-group button {
+  padding: 6px 22px;
+  background-color: #e87751;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+  outline: none;
+}
+
+.person-btn-group button:nth-child(2) {
+  border: 1px solid #e87751;
+  background-color: white;
+  color: #e87751;
+}
+
+.setting-btn-area {
+  margin-left: 30px;
+  margin-top: 60px;
+}
+
+.setting-btn-area button {
+  padding: 6px 22px;
+  background-color: #bfbfbf;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+
+.setting-btn-area .save-btn-active {
+  background-color: #e87751;
+}
+
+/*# sourceMappingURL=../maps/personal.css.map */

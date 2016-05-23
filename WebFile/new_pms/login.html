@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全众云物业</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+	<script>
+
+
+		(function (doc, win) {
+			var docEl = doc.documentElement;
+			var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+			var recalc = function () {
+				var clientWidth = docEl.clientWidth;
+				if (clientWidth > 1600) {
+					if (!clientWidth) return;
+					docEl.style.fontSize = (clientWidth / 1600 * 20) + 'px';
+				}
+			};
+			recalc();
+			if (!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+		})(document, window);
+		$(function () {
+			$('.user-name input').add('.password input').on('keyup', function () {
+				if ($(this).val() != "") {
+					$(this).siblings('.qz-close').show();
+				} else {
+					$(this).siblings('.qz-close').hide();
+				}
+			})
+
+
+			$('.qz-close').on('click', function () {
+				$(this).siblings('input').val("");
+				$(this).hide()
+			})
+
+			//提示框
+			$('.tips-close').on('click', function () {
+				$(this).parents('.warm-tips').fadeOut(300);
+			})
+			//登录
+			$('#login').on('click', function () {
+				$('.info-tips').fadeIn(300)
+				$('.code-tips').fadeIn(300)
+				$(document).on('mousedown', function () {
+					$('.warm-tips').fadeOut(300);
+				})
+			})
+
+			$(document).on('mouseup', function () {
+				$(document).off('mousedown');
+			})
+
+			$('.login-check-area .pull-right').hover(function(){
+				$('.pwd-tips').stop().fadeIn();
+			},function(){
+				$('.pwd-tips').stop().fadeOut();
+			});
+			//忘记密码温馨提示
+		})
+	</script>
+</head>
+<body>
+<div class="login-wrapper">
+	<div class="qz-login-container">
+		<form action="###">
+			<div class="fill-login-msg">
+				<div class="qz-big-logo">
+					<img src="img/login/logo.png" alt="">
+					<h1><img src="img/login/title.png" alt=""></h1>
+				</div>
+				<div class="user-base-info">
+					<div class="info-tips warm-tips">
+						<p><span>用户名错误</span><i class="iconfont tips-close">&#xe607;</i></p>
+					</div>
+					<div class="login-input-area user-name">
+						<input type="text" placeholder="用户名">
+						<i class="iconfont tip">&#xe60e;</i>
+						<i class="iconfont qz-close">&#xe607;</i>
+					</div>
+					<div class="login-input-area password">
+						<input type="password" placeholder="密码">
+						<i class="iconfont tip">&#xe610;</i>
+						<i class="iconfont qz-close">&#xe607;</i>
+					</div>
+					<div class="login-input-area check-code">
+						<div class="code-tips warm-tips">
+							<p><span>验证码输入错误</span><i class="iconfont tips-close">&#xe607;</i></p>
+						</div>
+						<input class="pull-left" type="text" placeholder="验证码">
+						<div class="code pull-right">
+							<div class="code-content pull-left"></div>
+							<i class="iconfont pull-right">&#xe60f;</i>
+						</div>
+					</div>
+					<div class="login-check-area">
+						<div class="pwd-tips warm-tips">
+							<p>请联系管理员：<span>电话号码</span><i class="iconfont tips-close">&#xe607;</i></p>
+						</div>
+						<span class="pull-left"><input type="checkbox" id="remember-me"><label
+								for="remember-me">记住我</label></span>
+						<span class="pull-right"><a href="###">忘记密码</a></span>
+					</div>
+					<div class="sub-btn">
+						<button id="login" type="button">登录</button>
+					</div>
+					<div class="to-join-us">
+						<a>还没有账号？申请入驻 <i class="iconfont">&#xe611;</i></a>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+</body>
+</html>

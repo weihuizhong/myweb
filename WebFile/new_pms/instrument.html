@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>居民抄表</title>
+	<!--<link rel="stylesheet" href="css/style.css">-->
+	<script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" href="css/instrument.css">
+</head>
+<body>
+<div id="arch" class="arch">
+	<header class="arch-title">
+		<h2>仪表管理</h2>
+	</header>
+	<div class="table-title">
+		<form id="ins-search-form" action="###">
+			<label for="ins-input">
+				<input id="ins-input" class="ins-input" placeholder="仪表名称、房间号">
+				<i class="icon-search"></i>
+			</label>
+		</form>
+	</div>
+	<!--按钮组-->
+	<div class="arch-btn-bar">
+		<ul class="electricity">
+			<li class="table-active">电表</li>
+			<li>水表</li>
+		</ul>
+		<ul class="and-change btn-group">
+			<li class="arch-btn change-ins-btn"><a href="###">换表</a></li>
+			<li class="arch-btn add-btn"><a href="###">增加</a></li>
+			<li class="arch-btn del-btn"><a href="###">删除</a></li>
+		</ul>
+	</div>
+
+	<!--正文-->
+	<div class="arch-content">
+		<!--左侧栏搜索，树状图-->
+		<!--表格-->
+		<div class="arch-table-wrap">
+			<div class="arch-table">
+				<div class="right-active">
+					<div class="table-container">
+						<table class="arch-table-header">
+							<thead>
+							<tr class="thead">
+								<th class="">电表编号</th>
+								<th>关联房间号</th>
+								<th>状态</th>
+								<th>创建人</th>
+								<th>电表型号</th>
+								<th>倍率</th>
+								<th>分摊比例</th>
+								<th>倍率</th>
+								<th>回程</th>
+								<th>是否换表</th>
+								<th>备注</th>
+							</tr>
+							</thead>
+						</table>
+						<form id="myform" action="###">
+							<table class="arch-table-body">
+								<thead>
+								<tr class="thead">
+									<th class="">电表编号</th>
+									<th>关联房间号</th>
+									<th>状态</th>
+									<th>创建人</th>
+									<th>电表型号</th>
+									<th>倍率</th>
+									<th>分摊比例</th>
+									<th>倍率</th>
+									<th>回程</th>
+									<th>是否换表</th>
+									<th>备注</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td><input disabled class="input-small" type="text"
+									           value="D-总表"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="总表"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="使用中"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="管理员"></td>
+									<td><input disabled class="input-small" type="text"
+									           value=""></td>
+									<td><input disabled class="input-small" type="text"
+									           value="1.0"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="1.0"></td>
+									<td><input disabled class="input-small" type="text"
+									           value=""></td>
+									<td><input disabled class="input-small" type="text"
+									           value=""></td>
+									<td><input disabled class="input-small" type="text"
+									           value="是"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="表坏了"></td>
+								</tr>
+								<tr>
+									<td><input disabled class="input-small" type="text"
+									           value="D-总表"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="总表"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="使用中"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="管理员"></td>
+									<td><input disabled class="input-small" type="text"
+									           value=""></td>
+									<td><input disabled class="input-small" type="text"
+									           value="1.0"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="1.0"></td>
+									<td><input disabled class="input-small" type="text"
+									           value=""></td>
+									<td><input disabled class="input-small" type="text"
+									           value=""></td>
+									<td><input disabled class="input-small" type="text"
+									           value="是"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="表坏了"></td>
+								</tr>
+								<tr>
+									<td><input disabled class="input-small" type="text"
+									           value="D-总表"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="总表"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="使用中"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="管理员"></td>
+									<td><input disabled class="input-small" type="text"
+									           value=""></td>
+									<td><input disabled class="input-small" type="text"
+									           value="1.0"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="1.0"></td>
+									<td><input disabled class="input-small" type="text"
+									           value=""></td>
+									<td><input disabled class="input-small" type="text"
+									           value=""></td>
+									<td><input disabled class="input-small" type="text"
+									           value="是"></td>
+									<td><input disabled class="input-small" type="text"
+									           value="表坏了"></td>
+								</tr>
+								</tbody>
+								<script type="text/x-handlebars-template" id="table-template">
+									<tr class="change add">
+										<td><input class="input-small" type="text"
+										           value=""></td>
+										<td><input class="input-small" type="text"
+										           value=""></td>
+										<td><input class="input-small" type="text"
+										           value=""></td>
+										<td><input class="input-small" type="text"
+										           value=""></td>
+										<td><input class="input-small" type="text"
+										           value=""></td>
+										<td><input class="input-small" type="text"
+										           value=""></td>
+										<td><input class="input-small" type="text"
+										           value=""></td>
+										<td><input class="input-small" type="text"
+										           value=""></td>
+										<td><input class="input-small" type="text"
+										           value=""></td>
+										<td><input class="input-small" type="text"
+										           value=""></td>
+										<td><input class="input-small" type="text"
+										           value=""></td>
+									</tr>
+								</script>
+							</table>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="arch-footer">
+				<div class="page-nav">
+					<div class="pull-left link"><a class="page-prev" href="javascript:void(0)"
+					                               onclick="urlPage('1');return false;">上一页</a> <a class="num"
+					                                                                               href="javascript:void(0)"
+					                                                                               onclick="urlPage('1');return false;">1</a><span>2</span><a
+							class="num" href="javascript:void(0)" onclick="urlPage('3');return false;">3</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('4');return false;">4</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('5');return false;">5</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('6');return false;">6</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('7');return false;">7</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('8');return false;">8</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('9');return false;">9</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('10');return false;">10</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('11');return false;">11</a> <a
+							class="page-next" href="javascript:void(0)" onclick="urlPage('3');return false;">下一页</a> <a
+							class="page-last" href="javascript:void(0)" onclick="urlPage('508');return false;">尾页</a>
+					</div>
+					共 6092 条记录
+					<div class="pull-right jump">
+						<form method="get" action="/qzsaas/index.php?s=/Home/House/meterManage.html"
+						      data-nav="#House/meterManage" id="mainPageForm">
+							<input type="hidden" name="p" value="2">
+							第<input type="text" name="p" class="txt28" id="jumpPage" onfocus="this.value=''" value="2">页
+							<a href="javascript:void(0)" class="btn_jump page_btm_jump">跳 转</a>
+						</form>
+					</div>
+				</div>
+				<!--保存按钮-->
+				<ul class="btn-group save-cancel">
+					<li class="arch-btn arch-save"><a href="###">保存</a></li>
+					<li class="arch-btn arch-cancel"><a href="###">取消</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery.freezeheader.js"></script>
+<script type="text/javascript">
+	//设置页面高度
+	function resize(argument) {
+		var myheight = $(window).height();
+		myheight < 677 ? 677 : '';
+		$('.qz-container').height(myheight - 50 + 'px');
+		$('.qz-left-fixed').height(myheight - 50 + 'px');
+		$('#arch').height(myheight - 110 + 'px');
+	}
+	resize();
+
+	//初始化table头部宽度
+	function initTableHeader() {
+		$('.right-active').css({
+			maxHeight: $('.arch-table').height() + 'px'
+		});
+		$('.arch-table-header').width($('.arch-table-body').outerWidth());
+
+		var header = $('.arch-table-header thead th');
+		var body = $('.arch-table-body thead th');
+		for (var i = 0; i < header.length; i++) {
+			header.eq(i).width(body.eq(i).width());
+		}
+	}
+	initTableHeader();
+
+	//    table固定头部
+	$('.right-active').scroll(function () {
+		$('.arch-table-header').css('top', $('.right-active').scrollTop() - 1);
+	});
+	$(window).resize(function () {
+		initTableHeader();
+		resize();
+	});
+
+	//电表水表切换
+	$('.electricity li').on('click', function () {
+		var type = $(this).html();
+		$(this).addClass('table-active').siblings('li').removeClass('table-active');
+		$('.arch-table-header th').eq(0).html(type + '编号');
+		$('.arch-table-body th').eq(0).html(type + '编号');
+	});
+
+
+	//点击
+	function trClick() {
+		var index = null;
+		var right = $('.right-active tbody tr');
+
+		right.off();
+		right.click(function () {
+			if (!$(this).hasClass('change')) {
+				$(this).addClass('active').siblings().removeClass('active');
+				index = $(this).index();
+				//可编辑
+				$('.change-btn').removeClass('disabled-btn');
+			}
+
+			return false;
+		});
+	}
+	trClick();
+
+	//点击修改
+	$('.change-btn').click(function () {
+		var active = $('tr.active');
+		if (active.length <= 0) {
+			alert('请选择一样');
+			return;
+		}
+		active.addClass('change');
+		$('tr.change input[disabled]').not('.input-disabled').removeAttr('disabled');
+	});
+
+	//增加
+	$('.add-btn').click(function () {
+		var html = $('#table-template').html();
+		$('.table-container tbody').prepend(html);
+
+		//重置
+		trClick();
+	});
+
+
+	//保存
+	$('.arch-save').click(function () {
+		$('tr input').attr('disabled', 'disabled');
+		$('.add').removeClass('add');
+		$('#myform').submit();
+		$('tr').removeClass('change').removeClass('active');
+	});
+
+	//取消
+	$('.arch-cancel').click(function () {
+		var change = $('tr.change');
+		$('.add').remove();
+		change.find('input').attr('disabled', 'true');
+		change.removeClass('active').removeClass('change');
+		$('#myform')[0].reset();
+	});
+
+	//删除
+	$('.del-btn').click(function () {
+		var active = $('tr.active');
+		console.log(active.length);
+		if (active.length <= 0) {
+			alert('请选择一行');
+			return;
+		}
+		active.remove();
+	});
+
+	//查询
+	$('.icon-search').click(function () {
+		var val = $(this).siblings('input').val();
+		if (val.trim() != '') {
+			$('#ins-search-form').submit();
+		}
+	});
+
+
+	$(document).click(function (e) {
+		$('tr').removeClass('active');
+	});
+
+</script>
+</body>
+</html>

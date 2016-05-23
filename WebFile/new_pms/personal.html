@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/personal.css">
+</head>
+<body>
+<div class="personal-center">
+  <div class="qz-person-header">
+  	<h2>设置中心</h2>
+  </div>
+  <form action="###">
+    <div class="personal-setting">
+    	<h3 class="per-title">个人中心</h3>
+    	<div class="person-code">
+    		<p><span class="expend-setting">密码管理</span></p>
+        <div class="expend-item" style="display: none;">
+          
+      		<div class="code-input pull-left">
+      			<div class="input-area">
+      				<label>原始密码: </label><input type="password"> <span class="input-eyes"></span>
+      			</div>
+      			<div class="input-area">
+      				<label>新密码: </label><input type="password"> <span class="input-eyes"></span>
+      			</div>
+      			<div class="input-area">
+      				<label>重输一遍: </label><input type="password"> <span class="input-eyes"></span>
+      			</div>
+          </div>
+          <div class="setting-btn-area pull-left">
+            <button>保存</button>
+          </div>
+        </div>
+    	</div>
+    	<h3 class="per-title">物业公司信息</h3>
+    	<div class="company-setting">
+    		<div class="code-input">
+    			<div class="input-area">
+    				<label>地址: </label><input type="text">
+    			</div>
+    			<div class="input-area">
+    				<label>电弧: </label><input type="text">
+    			</div>
+    			<div class="input-area">
+    				<label>开户行: </label><input type="text">
+    			</div>
+    			<div class="input-area">
+    				<label>银行账号: </label><input type="text">
+    			</div>
+    		</div>
+    	</div>
+    	<h3 class="per-title">打发票信息</h3>
+    	<div class="ticket-setting">
+    		<div class="code-input">
+    			<div class="input-area">
+    				<label>发票种类: </label>
+            <select name="" id="">
+              <option value="">增值税之普通发票</option>
+            </select>
+    			</div>
+    			<div class="input-area">
+    				<label>收款人: </label>
+            <select name="" id="">
+              <option value="">3%</option>
+            </select>
+    			</div>
+    			<div class="input-area">
+    				<label>税率: </label>
+            <input type="text">
+    			</div>
+    		</div>
+    		<div class="code-input">
+    			<div class="input-area">
+    				<label>复核人: </label>
+            <input type="text">
+    			</div>
+    			<div class="input-area">
+    				<label>纳税人识别号: </label>
+            <input type="text">
+    			</div>
+    			<div class="input-area">
+    				<label>开票人: </label>
+            <input type="text">
+    			</div>
+    		</div>
+    	</div>
+    	<h3 class="per-title">费用</h3>
+    	<div class="person-cost">
+    		<ul class="code-input">
+    			<li>
+    				<input id="water-cost-transfer" type="checkbox">
+    				<label for="water-cost-transfer">水费已移交</label>
+    			</li>
+    			<li>
+    				<input id="ele-cost-transfer" type="checkbox">
+    				<label for="ele-cost-transfer">电费已移交</label>
+    			</li>
+    		</ul>
+    		<ul class="code-input">
+    			<li>
+    				<input id="open-yinlian" type="checkbox">
+    				<label for="open-yinlian">开启银联扣款功能</label>
+    			</li>
+    			<li>
+    				<input id="open-print" type="checkbox">
+    				<label for="open-print">开启打印发票功能</label>
+    			</li>
+    		</ul>
+    		<div class="code-input">
+    			<label>费用小数点 位数：</label>
+    			<input type="text">
+    		</div>
+    	</div>
+    	<h3 class="per-title">到期提醒</h3>
+    	<div class="expire-remind">
+    		<div class="input-area">
+    			<label>未缴费: </label>
+    			<span>提前<input type="text">天提醒业主</span>
+    		</div>
+    		<div class="input-area">
+    			<label>合同到期: </label>
+    			<span>提前<input type="text">天提醒出租户</span>
+    		</div>
+    		<div class="input-area">
+    			<label>合同到期: </label>
+    			<span>提前<input type="text">天提醒承租户</span>
+    		</div>
+    	</div>
+    	<h3 class="per-title">管理</h3>
+    	<div class="person-message">
+    		<div class="code-input">
+    			<span>租赁合同到期提醒时限<input type="text">天</span>
+    		</div>
+    	</div>
+    	<div class="person-btn-group">
+    		<button type="submit">保存</button>
+        <button type="reset">取消</button>
+    	</div>
+    </div>
+  </form>
+</div>
+</body>
+<script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/personal.js"></script>
+</html>

@@ -1,0 +1,268 @@
+body {
+  font-family: 'Microsoft yahei';
+  position: relative;
+}
+
+.qz-ticket {
+  position: absolute;
+  z-index: 200;
+  left: 50%;
+  margin-left: -400px;
+  width: 800px;
+  padding-bottom: 60px;
+}
+
+.qz-ticket h3 {
+  text-align: center;
+}
+
+.qz-ticket-item {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+
+.qz-ticket-item .item-title {
+  color: #b2b2b2;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.t-detail {
+  margin: 0 24px;
+  /*text-align: center;*/
+  border-top: 1px dashed #c9c9c9;
+  border-bottom: 1px dashed #c9c9c9;
+  padding: 10px 0;
+  height: 506px;
+  background-image: url(../img/payCenter/piao.png);
+  background-image: url(../img/payCenter/piaoie.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 20px;
+}
+
+.t-detail img {
+  width: 100%;
+}
+
+.t-detail {
+  text-align: left;
+  position: relative;
+}
+
+.t-detail p {
+  color: #B7B7B7;
+  font-size: 12px;
+}
+
+.t-detail .mic-code {
+  position: absolute;
+  width: 100%;
+  top: 94px;
+}
+
+.t-detail .mic-code .t-creat-date {
+  margin-right: 50px;
+}
+
+.t-detail .user-detail {
+  position: absolute;
+  left: 144px;
+  top: 126px;
+}
+
+.t-detail .user-detail p {
+  line-height: 17px;
+  margin: 0;
+}
+
+.t-detail .total-count {
+  position: absolute;
+  bottom: 134px;
+  width: 100%;
+}
+
+.t-detail .total-count .big-case {
+  position: absolute;
+  left: 220px;
+}
+
+.t-detail .total-count .small-case {
+  position: absolute;
+  left: 600px;
+}
+
+.t-detail .to-user {
+  position: absolute;
+  left: 144px;
+  bottom: 52px;
+}
+
+.t-detail .to-user p {
+  line-height: 17px;
+  margin: 0;
+}
+
+.t-detail .check-code {
+  position: absolute;
+  bottom: 64px;
+  left: 470px;
+}
+
+.t-detail .user-checked {
+  position: absolute;
+  bottom: 22px;
+  width: 100%;
+  height: 14px;
+}
+
+.t-detail .user-checked span {
+  position: absolute;
+  display: block;
+  width: 100px;
+  top: 0;
+}
+
+.t-detail .user-checked .name-1 {
+  left: 95px;
+}
+
+.t-detail .user-checked .name-2 {
+  left: 277px;
+}
+
+.t-detail .user-checked .name-3 {
+  left: 447px;
+}
+
+.t-detail .ticket-money {
+  position: absolute;
+  height: 132px;
+  width: 715px;
+  top: 216px;
+  left: 20px;
+}
+
+.t-detail .ticket-money table {
+  width: 100%;
+}
+
+.t-detail .ticket-money table td {
+  /*border:1px solid #000;*/
+  text-align: center;
+  color: #B7B7B7;
+  font-size: 12px;
+}
+
+.t-detail .ticket-money .total-money {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.t-detail .ticket-money .total-money span {
+  position: absolute;
+  display: block;
+  width: 108px;
+  right: 0;
+  text-align: center;
+}
+
+.t-detail .ticket-money .total-money span:first-child {
+  right: 147px;
+}
+
+.qz-ticket .print-btn {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  background-color: white;
+  line-height: 50px;
+  border-top: 1px solid #ccc;
+}
+
+.qz-ticket .print-btn button {
+  background-color: #e87751;
+  border: #e87751;
+  color: white;
+  float: right;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 0px 20px;
+  border-radius: 2px;
+  height: 28px;
+  line-height: 28px;
+  margin-top: 12px;
+}
+
+.qz-ticket-download, .qz-ticket-printing, .qz-ticket-success {
+  width: 500px;
+  margin: 60px auto;
+  margin-top: 150px;
+  padding: 54px 70px 40px 60px;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  background-color: white;
+}
+
+.qz-ticket-download p, .qz-ticket-printing p, .qz-ticket-success p {
+  color: #808080;
+  line-height: 30px;
+  margin-bottom: 0;
+}
+
+.qz-ticket-download p span, .qz-ticket-printing p span, .qz-ticket-success p span {
+  color: #808080;
+}
+
+.qz-ticket-download .last-p, .qz-ticket-printing .last-p, .qz-ticket-success .last-p {
+  margin-bottom: 20px;
+}
+
+.qz-ticket-download button, .qz-ticket-printing button, .qz-ticket-success button {
+  padding: 5px 14px;
+  background-color: #e87751;
+  color: white;
+  border: 1px solid #e87751;
+  border-radius: 2px;
+  margin: 0 15px;
+}
+
+.qz-ticket-download .no-down, .qz-ticket-printing .no-down, .qz-ticket-success .no-down {
+  color: #e87751;
+  background-color: #fff;
+}
+
+.qz-ticket-printing .qz-sort, .qz-ticket-success .qz-sort {
+  color: #333333;
+}
+
+.qz-ticket-printing p span, .qz-ticket-success p span {
+  font-size: 18px;
+  color: #333;
+}
+
+.qz-ticket-printing button, .qz-ticket-success button {
+  padding: 5px 18px;
+  background-color: white;
+  border: 1px solid #57a3f1;
+  color: #57a3f1;
+}
+
+.qz-ticket-success .last-p span {
+  color: #808080;
+}
+
+.qz-ticket-success button {
+  background-color: #57a3f1;
+  color: #fff;
+}
+
+.qz-ticket-success .qz-less-time {
+  font-size: 14px;
+  color: white;
+}
+
+/*# sourceMappingURL=../maps/payCenter.css.map */

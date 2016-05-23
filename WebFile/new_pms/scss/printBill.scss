@@ -1,0 +1,471 @@
+@charset "utf-8";
+@import "core/_icon";
+
+html, body {
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: 'Microsoft yahei';
+}
+
+$defaultColor: #383838;
+$tableColor: #d9d9d9;
+$backColor: #f7f7f7;
+
+%clearfix:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.pb {
+  // padding: 20px;
+  height: 100%;
+  min-width: 780px;
+  font-family: "Microsoft yahei", "sans-serif", "宋体";
+  color: $defaultColor;
+  display: flex;
+  flex-direction: column;
+  lable,input,span{
+    font-size: 14px;
+    vertical-align: middle;
+  }
+
+  //设置基本样式
+  .btn-group {
+    @extend %clearfix;
+
+    li {
+      float: left;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  li, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .hidden {
+    display: none;
+  }
+  sub {
+    vertical-align: bottom;
+  }
+  input {
+    color: $defaultColor;
+  }
+  //通用按钮
+  .pb-btn {
+    padding: 5px 20px;
+    text-align: center;
+    line-height: inherit;
+    margin-right: 12px;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  @at-root {
+    .pb-filter {
+      @extend %clearfix;
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 20px;
+      margin-top: 18px;
+
+      @at-root {
+        .pb-filter-select {
+          margin-left: 30px;
+          margin-bottom: 10px;
+          text-align: left;
+
+          select {
+            box-sizing: border-box;
+            height: 32px;
+            padding: 5px 20px 5px 20px;
+            line-height: 32px;
+            font-size: 14px;
+          }
+        }
+
+        .pb-filter-date {
+          text-align: left;
+          margin-left: 30px;
+
+          span {
+            color: #4d4d4d;
+          }
+
+          .qz-date {
+            width: 163px;
+            height: 30px;
+            border: 1px solid #b2b2b2;
+            background-image: url(../img/icon/days.png);
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-position: 140px center\9;
+            background-origin: content-box;
+            outline-color: transparent;
+            padding: 0 6px;
+            position: relative;
+            cursor: pointer;
+            line-height:30px\9;
+          }
+
+          input {
+            font-size: 14px;
+            vertical-align: middle;
+          }
+
+          .pb-filter-border {
+            display: inline-block;
+            width: 10px;
+            height: 1px;
+            background-color: $tableColor;
+            vertical-align: middle;
+          }
+        }
+
+        //提交按钮
+        .pb-filter-submit {
+          @extend .pb-btn;
+          background-color: #57a3f1;
+          border: 1px solid #57a3f1;
+          color: #fff !important;
+        }
+      }
+    }
+  }
+
+  //标题 按钮
+  @at-root {
+    //标题
+    .pb-title {
+      h2 {
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 74px;
+        margin: 0;
+        text-align: center;
+      }
+    }
+
+    //主体
+    @at-root {
+      //表格
+      $tableColor: $tableColor;
+      @at-root {
+        .pb-table-wrap {
+          display: flex;
+          flex: 1;
+          overflow: hidden;
+          position: relative;
+          width: 100%;
+          padding-left: 20px;
+          padding-right: 20px;
+          box-sizing: border-box;
+          margin-bottom: 50px;
+        }
+
+        //表格
+        @at-root {
+          .pb-table {
+            display: block;
+            position: relative;
+            text-align: center;
+            overflow: auto;
+            width: 100%;
+            max-height: 100%;
+            box-sizing: border-box;
+            table {
+              width: 100%;
+              border: 1px solid $tableColor;
+              white-space: nowrap;
+              height: 58px;
+              line-height: 58px;
+              font-size: 14px;
+              background-color: #f2f2f2;
+              font-weight: 600;
+              color: #383838;
+              border-collapse: collapse;
+              border-spacing: 0;
+            }
+            input {
+              width: 100%;
+              height: 100%;
+              display: block;
+              font-size: 12px;
+              color: #383838;
+              border: none;
+              cursor: pointer;
+              background-color: transparent;
+              text-align: center;
+              /*line-height: 30px\9;*/
+              &[type=radio], &[type=checkbox] {
+                width: auto;
+                height: auto;
+                margin: 0 auto;
+              }
+            }
+            td, th {
+              text-align: center;
+              vertical-align: middle;
+            }
+            th {
+              background-color: #f2f2f2;
+              &:nth-child(1) {
+                width: 13%;
+              }
+            }
+            tr {
+              background-color: #fff;
+              height: 44px;
+
+              &:last-child {
+                td {
+                  border-bottom: none;
+                }
+              }
+            }
+            td {
+              border: 1px solid $tableColor;
+              width: 60px;
+              font-size: 12px;
+              color: #383838;
+              text-align: center;
+              vertical-align: middle;
+
+              //表头设置宽度
+              &:first-child {
+                border-left: none;
+              }
+              &:last-child {
+                border-right: none;
+              }
+            }
+            td, tr, .checkbox-phlygon {
+              label {
+                display: block;
+                display: none\9;
+                box-sizing: border-box;
+                position: relative;
+                width: 13px;
+                height: 13px;
+                border: 1px solid #B5B5B5;
+                margin: 0 auto;
+                border-radius: 50%;
+              }
+              input[type=checkbox] {
+                display: none;
+                display: block\9;
+                &:checked + label {
+                  background-color: #57a3f1;
+                  &:after {
+                    box-sizing: border-box;
+                    border: 2px solid #fff;
+                    width: 11px;
+                    height: 11px;
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    border-radius: 50%;
+                  }
+                }
+              }
+              .checkbox-phlygon {
+                label {
+                  display: none\9;
+                  border-radius: 0;
+                }
+                input[type=checkbox] {
+                  display: none;
+                  display: block\9;
+                  &:checked + label {
+                    background-image: url(../img/icon/icon-checked.png) !important;
+                    background-color: transparent;
+                    &:after {
+                      display: none;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        //分页
+        @at-root {
+          .pb-footer {
+            @extend %clearfix;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: left;
+          }
+        }
+
+        //保存和取消按钮
+        @at-root {
+          .pb-btn-group {
+            text-align: right;
+            position: fixed;
+            width: 100%;
+            border-top: 1px solid #ccc;
+            bottom: 0;
+            right: 0;
+            background-color: #fff;
+            a {
+              display: block;
+              text-decoration: none;
+              border: none;
+              outline: none;
+            }
+            .pb-btn {
+              display: inline-block !important;
+              margin-top: 10px;
+              margin-bottom: 10px;
+            }
+
+            @at-root {
+              .pb-print {
+                background-color: #e87751;
+                color: #fff;
+              }
+
+              .pb-cancel {
+                border: 1px solid #e87751;
+                color: #e87751;
+              }
+
+              .pb-preview {
+                padding-left: 15px !important;
+                background-color: #57a3f1;
+                color: #fff;
+
+                i {
+                  @extend %icon-eye;
+                  display: inline-block;
+                  margin-right: 3px;
+                }
+              }
+            }
+          }
+        }
+
+        //合并数据
+        @at-root {
+          .pb-table {
+            .pb-search {
+              margin-bottom: 20px;
+              margin-top: 30px;
+            }
+          }
+
+          .pb-search {
+            display: flex;
+            font-size: 14px;
+
+            li {
+              &:first-child {
+                flex: 2;
+              }
+              &:last-child {
+                flex: 1;
+              }
+            }
+            input {
+              display: inline;
+              vertical-align: middle;
+            }
+
+            @at-root {
+              //发票名称
+              .pb-search-name {
+                text-align: left;
+                label {
+                  white-space: nowrap;
+                }
+                input {
+                  border: 1px solid $tableColor;
+                  width: 180px;
+                  height: 30px;
+                  line-height: 30px\9;
+                  vertical-align: middle;
+                  margin-left: 10px;
+                  text-align: left;
+                  padding: 0 5px;
+                }
+                select {
+                  box-sizing: border-box;
+                  height: 32px;
+                  padding: 5px 20px 5px 20px;
+                  line-height: 32px;
+                  font-size: 14px;
+                  vertical-align: top;
+                  option {
+                    line-height: 27px;
+                    padding: 5px 20px;
+                  }
+                }
+              }
+
+              //合并数据，往期欠费
+              .pb-search-checkbox {
+                @extend %clearfix;
+                text-align: right;
+                input {
+                  display: none;
+                  display: inline-block\9;
+                  &:checked + label {
+                    &:before {
+                      @extend %icon-checked;
+                      display: inline-block;
+                    }
+                  }
+                }
+                label {
+                  &:before {
+                    content: '';
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    vertical-align: middle;
+                    border: 1px solid $tableColor;
+                    border-radius: 1px;
+                    margin-right: 10px;
+                    display: none\9;
+                  }
+                  cursor: pointer;
+                }
+                > div {
+                  float: right;
+                  margin-left: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .icon-tri-white-right {
+    width: 6px;
+    height: 6px;
+    background-size: 6px 6px;
+  }
+}
+

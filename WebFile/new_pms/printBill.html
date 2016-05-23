@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>打印发票</title>
+	<script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/perge.css">
+	<link rel="stylesheet" href="css/printBill.css">
+</head>
+<body>
+<div id="pb" class="pb">
+	<form id="pb-filter" class="pb-filter" action="###">
+		<div id="pb-filter-select" class="pb-filter-select">
+			<lable for="pb-pos">物业定位：</lable>
+			<select id="dong-id" class="y-select" name="" onchange="nextSelect(this)">
+				<option selected value="一栋">选择楼栋</option>
+				<option value="一栋">一栋</option>
+			</select>
+		</div>
+		<div class="pb-filter-date">
+			<span>费用周期：</span>
+			<input class="qz-date" placeholder="-请选择-" type="text" id="date" name="date" value="" readonly=""
+			       onclick="WdatePicker({dateFmt: 'yyyy-MM-dd'});">
+			<span class="pb-filter-border"></span>
+			<input class="qz-date" placeholder="-请选择-" type="text" id="end-date" name="date" value="" readonly=""
+			       onclick="WdatePicker({dateFmt: 'yyyy-MM-dd'});">
+			<input id="pb-filter-submit" class="pb-filter-submit" type="submit" value="搜索">
+		</div>
+	</form>
+
+	<!--正文-->
+	<div class="pb-content">
+		<!--左侧栏搜索，树状图-->
+		<!--表格-->
+		<form action="###">
+			<div class="pb-table-wrap">
+				<div class="pb-table">
+					<table class="pb-table-body">
+						<thead>
+						<tr class="thead">
+							<th class="checkbox-phlygon">
+								<input id="all" type="checkbox">
+								<label for="all"></label>
+							</th>
+							<th class="">费用时间</th>
+							<th>房号</th>
+							<th>缴费名称</th>
+							<th>合计金额</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>
+								<input id="input1" class="checkbox-cycle" type="checkbox">
+								<label for="input1"></label>
+							</td>
+							<td><input disabled class="input-small" type="text"
+							           value="205"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="一栋"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="张小四"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="1350"></td>
+						</tr>
+						<tr>
+							<td>
+								<input id="input2" class="checkbox-cycle" type="checkbox">
+								<label for="input2"></label>
+							</td>
+							<td><input disabled class="input-small" type="text"
+							           value="205"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="一栋"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="张小四"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="1350"></td>
+						</tr>
+						<tr>
+							<td>
+								<input id="input3" class="checkbox-cycle" type="checkbox">
+								<label for="input3"></label>
+							</td>
+							<td><input disabled class="input-small" type="text"
+							           value="205"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="一栋"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="张小四"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="1350"></td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="page-footer pb-footer">
+						<div class="page-nav" style="left: 0px; bottom: 10px;">
+							<div class="pull-left link"><span>1</span><a class="num"
+							                                             href="/qzsaas/index.php?s=/Home/Fee/taxList/JsWin/PaymentTaxListWin/p/2.html">2</a>
+								<a class="page-next"
+								   href="/qzsaas/index.php?s=/Home/Fee/taxList/JsWin/PaymentTaxListWin/p/2.html">下一页</a>
+							</div>
+							共 21 条记录
+							<div class="pull-right jump">
+								<input type="hidden" name="a" value="taxList"><input type="hidden" name="c" value="Fee"><input
+									type="hidden" name="JsWin" value="PaymentTaxListWin">
+								第<input type="text" name="p" class="txt28" onfocus="this.value=''" value="1">页
+								<a href="javascript:void(0)" onclick="document.getElementById('mainPageForm').submit();"
+								   class="btn_jump page_btm_jump">跳 转</a>
+							</div>
+						</div>
+					</div>
+					<ul class="pb-search">
+						<li class="pb-search-name">
+							<lable for="pb-search-type"> 发票名称：</lable>
+							<select name="" id="pb-search-select" class="pb-search-select">
+								<option value="单位">单位</option>
+								<option value="个人">个人</option>
+							</select>
+							<input id="pb-search-type" class="pb-search-type" placeholder="请输入单位名称" type="text">
+						</li>
+						<li class="pb-search-checkbox">
+							<div>
+								<input id="pb-merge-history" class="pb-merge-history" type="checkbox">
+								<label for="pb-merge-history">合并历史数据</label>
+							</div>
+							<div>
+								<input id="pb-lose-pay" class="pb-merge-history" type="checkbox">
+								<label for="pb-lose-pay">往期欠费</label>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<ul class="pb-btn-group">
+				<li class="pb-btn pb-preview"><a href="###"><i class="icon-eye"></i>打印预览</a></li>
+				<li class="pb-btn pb-print"><a href="###">打印</a></li>
+				<li class="pb-btn pb-cancel"><a href="###">取消</a></li>
+			</ul>
+		</form>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery.freezeheader.js"></script>
+<script type="text/javascript">
+	//三级联动select
+	var pbFilterSelect = $('#pb-filter-select');
+	function nextSelect(obj) {
+		var dan = $('#dan-id');
+		var room = $('#room-id');
+		if (obj.id == 'dong-id') {
+			dan.remove();
+			room.remove();
+			pbFilterSelect.append(
+					' <select id="dan-id" class="y-select" name="" onchange="nextSelect(this)">' +
+					'<option value="选择单元">选择单元</option>' +
+					'<option value="1单元">1单元</option>' +
+					'</select>'
+			);
+		} else if (obj.id == 'dan-id') {
+			room.remove();
+			pbFilterSelect.append(
+					' <select id="room-id" class="y-select" name="" onchange="nextSelect(this)">' +
+					'<option value="选择房号">选择房号</option>' +
+					'<option value="101">101</option>' +
+					'</select>'
+			);
+		} else {
+
+		}
+	}
+
+	var checkboxCycle = $('.checkbox-cycle');
+	var checkLen = checkboxCycle.length;
+	var checkAll = $('#all');
+	//全选
+	checkAll.change(function () {
+		checkboxCycle.prop('checked', $(this).prop('checked'));
+	});
+	checkboxCycle.click(function () {
+		if ($('.checkbox-cycle:checked').length >= checkLen) {
+			checkAll.prop('checked', true);
+		} else {
+			checkAll.prop('checked', false);
+		}
+	});
+
+	//查询
+	$('#pb-filter-submit').click(function () {
+
+	});
+
+
+	$(document).click(function (e) {
+		$('.y-option-list').hide();
+	});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 50px;
+  background-color: white;
+  line-height: 50px;
+}
+
+.content {
+  background-color: #ef5321;
+  height: 95%;
+  color: white;
+  text-align: center;
+}
+
+.con-logo {
+  padding-top: 100px;
+}
+
+.con-word h1 {
+  font-size: 48px;
+  letter-spacing: 6px;
+  font-weight: 100;
+}
+
+.con-dir {
+  margin-top: 90px;
+}
+
+.con-dir p {
+  letter-spacing: 2px;
+}
+
+.con-options {
+  margin-top: 30px;
+}
+
+.con-options button {
+  width: 140px;
+  margin: 0 15px;
+  height: 40px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #f8ac93;
+  border-radius: 5px;
+  font-size: 16px;
+  outline-color: transparent;
+}
+
+.go {
+  background-color: white !important;
+  color: #ef5321 !important;
+}
+
+/*# sourceMappingURL=../maps/index.css.map */

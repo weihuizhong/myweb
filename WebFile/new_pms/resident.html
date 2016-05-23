@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>居民抄表</title>
+	<!--<link rel="stylesheet" href="css/style.css">  -->
+	<script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" href="css/resident.css">
+</head>
+<body>
+<div class="arch" style="min-height: 675px">
+	<header class="arch-title">
+		<h2>居民抄表</h2>
+	</header>
+	<div class="table-title">
+		<span>费用周期：</span>
+		<input class="qz-date" type="text" id="date" name="date" value="" readonly=""
+		       onclick="WdatePicker({dateFmt: 'yyyy-MM-dd'});">
+	</div>
+	<!--按钮组-->
+	<div class="arch-btn-bar">
+		<ul class="electricity">
+			<li class="table-active">电表</li>
+			<li>水表</li>
+		</ul>
+		<ul class="import-export btn-group">
+			<li><a href="###">导入历史抄表</a><i class="icon-tri-blue-right"></i></li>
+		</ul>
+		<ul class="and-change btn-group">
+			<li class="disabled-btn arch-btn change-btn"><a href="###">修改</a></li>
+		</ul>
+	</div>
+
+	<!--正文-->
+	<div class="arch-content">
+		<!--左侧栏搜索，树状图-->
+		<!--表格-->
+		<div class="arch-table-wrap">
+			<div class="arch-table">
+				<div class="right-active">
+					<div class="table-container">
+						<table class="arch-table-header">
+							<thead>
+							<tr class="thead">
+								<th class="">管理区</th>
+								<th>居民电表名称</th>
+								<th>上次读数</th>
+								<th>本次读数</th>
+								<th>备注</th>
+								<th>实际行度</th>
+								<th>楼宇</th>
+								<th>倍率</th>
+								<th>回程</th>
+								<th>损耗率</th>
+								<th>是否换表</th>
+								<th>新表起始读数</th>
+							</tr>
+							</thead>
+						</table>
+						<form id="myform" action="###">
+							<table class="arch-table-body">
+								<thead>
+								<tr class="thead">
+									<th class="">管理区</th>
+									<th>居民电表名称</th>
+									<th>上次读数</th>
+									<th>本次读数</th>
+									<th>备注</th>
+									<th>实际行度</th>
+									<th>楼宇</th>
+									<th>倍率</th>
+									<th>回程</th>
+									<th>损耗率</th>
+									<th>是否换表</th>
+									<th>新表起始读数</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>华页大厦</td>
+									<td>D-栋电梯</td>
+									<td>9879.23</td>
+									<td><input disabled class="input-small qz-current-read" type="text"
+									           value="23453.55"></td>
+									<td><input disabled class="input-small qz-label" type="text" value="好了"></td>
+									<td>654.5</td>
+									<td>1.0</td>
+									<td>2.0</td>
+									<td>99999</td>
+									<td>1654.5</td>
+									<td>是</td>
+									<td>635454</td>
+								</tr>
+								<tr>
+									<td>华页大厦</td>
+									<td>D-栋电梯</td>
+									<td>9879.23</td>
+									<td><input disabled class="input-small qz-current-read" type="text"
+									           value="23453.55"></td>
+									<td><input disabled class="input-small qz-label" type="text" value="好了"></td>
+									<td>654.5</td>
+									<td>1.0</td>
+									<td>2.0</td>
+									<td>99999</td>
+									<td>1654.5</td>
+									<td>是</td>
+									<td>635454</td>
+								</tr>
+								<tr>
+									<td>华页大厦</td>
+									<td>D-栋电梯</td>
+									<td>9879.23</td>
+									<td><input disabled class="input-small qz-current-read" type="text"
+									           value="23453.55"></td>
+									<td><input disabled class="input-small qz-label" type="text" value="好了"></td>
+									<td>654.5</td>
+									<td>1.0</td>
+									<td>2.0</td>
+									<td>99999</td>
+									<td>1654.5</td>
+									<td>是</td>
+									<td>635454</td>
+								</tr>
+								<tr>
+									<td>华页大厦</td>
+									<td>D-栋电梯</td>
+									<td>9879.23</td>
+									<td><input disabled class="input-small qz-current-read" type="text" value=""></td>
+									<td><input disabled class="input-small qz-label" type="text" value="好了"></td>
+									<td>654.5</td>
+									<td>1.0</td>
+									<td>2.0</td>
+									<td>99999</td>
+									<td>1654.5</td>
+									<td>是</td>
+									<td>635454</td>
+								</tr>
+								<tr>
+									<td>华页大厦</td>
+									<td>D-栋电梯</td>
+									<td>9879.23</td>
+									<td><input disabled class="input-small qz-current-read" type="text"
+									           value="23453.55"></td>
+									<td><input disabled class="input-small qz-label" type="text" value=""></td>
+									<td>654.5</td>
+									<td>1.0</td>
+									<td>2.0</td>
+									<td>99999</td>
+									<td>1654.5</td>
+									<td>是</td>
+									<td>635454</td>
+								</tr>
+								<tr>
+									<td>华页大厦</td>
+									<td>D-栋电梯</td>
+									<td>9879.23</td>
+									<td><input disabled class="input-small qz-current-read" type="text" value=""></td>
+									<td><input disabled class="input-small qz-label" type="text" value=""></td>
+									<td>654.5</td>
+									<td>1.0</td>
+									<td>2.0</td>
+									<td>99999</td>
+									<td>1654.5</td>
+									<td>是</td>
+									<td>635454</td>
+								</tr>
+								<tr>
+									<td>华页大厦</td>
+									<td>D-栋电梯</td>
+									<td>9879.23</td>
+									<td><input disabled class="input-small qz-current-read" type="text" value=""></td>
+									<td><input disabled class="input-small qz-label" type="text" value="好了"></td>
+									<td>654.5</td>
+									<td>1.0</td>
+									<td>2.0</td>
+									<td>99999</td>
+									<td>1654.5</td>
+									<td>是</td>
+									<td>635454</td>
+								</tr>
+								</tbody>
+							</table>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!--             <div class="scroll-y">
+							<div class="scroll-y-bar"></div>
+						</div> -->
+			<div class="arch-footer">
+				<div class="page-nav">
+					<div class="pull-left link"><a class="page-prev" href="javascript:void(0)"
+					                               onclick="urlPage('1');return false;">上一页</a> <a class="num"
+					                                                                               href="javascript:void(0)"
+					                                                                               onclick="urlPage('1');return false;">1</a><span>2</span><a
+							class="num" href="javascript:void(0)" onclick="urlPage('3');return false;">3</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('4');return false;">4</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('5');return false;">5</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('6');return false;">6</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('7');return false;">7</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('8');return false;">8</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('9');return false;">9</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('10');return false;">10</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('11');return false;">11</a> <a
+							class="page-next" href="javascript:void(0)" onclick="urlPage('3');return false;">下一页</a> <a
+							class="page-last" href="javascript:void(0)" onclick="urlPage('508');return false;">尾页</a>
+					</div>
+					共 6092 条记录
+					<div class="pull-right jump">
+						<form method="get" action="/qzsaas/index.php?s=/Home/House/meterManage.html"
+						      data-nav="#House/meterManage" id="mainPageForm">
+							<input type="hidden" name="p" value="2">
+							第<input type="text" name="p" class="txt28" id="jumpPage" onfocus="this.value=''" value="2">页
+							<a href="javascript:void(0)" class="btn_jump page_btm_jump">跳 转</a>
+						</form>
+					</div>
+				</div>
+				<!--保存按钮-->
+				<ul class="import-export btn-group">
+					<li><a href="###">导出历史抄表</a><i class="icon-tri-blue-right"></i></li>
+
+				</ul>
+				<ul class="btn-group save-cancel">
+					<li class="arch-btn arch-save"><a href="###">保存</a></li>
+					<li class="arch-btn arch-cancel"><a href="###">取消</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery.freezeheader.js"></script>
+<script type="text/javascript">
+	//没有数据直接可输入状态
+	function writeAble() {
+		$('.qz-current-read').add('.qz-label').each(function () {
+			if ($(this).val() == '') {
+				$(this).removeAttr('disabled')
+			}
+		})
+	}
+	//监听enter事件
+	function keyEnter() {
+		$(window).on('keydown', function (event) {
+			if (event.keyCode === 13) {
+				var index = $('.qz-current-read:not([disabled]):focus').index('.qz-current-read:not([disabled])')
+				$('.qz-current-read:not([disabled])').eq(index + 1).focus()
+			}
+		})
+	}
+	keyEnter();
+	writeAble();
+	//初始化table头部宽度
+	function initTableHeader() {
+		$('.right-active').css({
+			maxHeight: $('.arch-table').height() + 'px'
+		})
+		$('.arch-table-header').width($('.arch-table-body').outerWidth());
+
+		var header = $('.arch-table-header thead th');
+		var body = $('.arch-table-body thead th');
+		for (var i = 0; i < header.length; i++) {
+			header.eq(i).width(body.eq(i).width());
+		}
+	}
+	initTableHeader();
+	//    table固定头部
+	$('.right-active').scroll(function () {
+		$('.arch-table-header').css('top', $('.right-active').scrollTop() - 1);
+	});
+	$(window).resize(function () {
+		initTableHeader();
+	});
+	//电表水表切换
+	$('.electricity li').on('click', function () {
+		var type = $(this).html();
+		$(this).addClass('table-active').siblings('li').removeClass('table-active')
+		$('.arch-table-header th').eq(1).html('居民' + type + '名称')
+		$('.arch-table-body th').eq(1).html('居民' + type + '名称')
+	})
+
+
+	//表格经过
+	function trHover() {
+		var index = null;
+		var left = $('.left-fixed tbody tr');
+		var right = $('.right-active tbody tr');
+
+		function rEnter() {
+			$(this).addClass('row-sel');
+			index = $(this).index();
+			left.eq(index).addClass('row-sel');
+		}
+
+		function rLever() {
+			$(this).removeClass('row-sel');
+			left.eq(index).removeClass('row-sel');
+		}
+
+		right.hover(rEnter, rLever);
+		right.click(function () {
+			if (!$(this).hasClass('change')) {
+				$(this).addClass('active').siblings().removeClass('active');
+				index = $(this).index();
+				left.eq(index).addClass('active').siblings().removeClass('active');
+				//可编辑
+				$('.change-btn').removeClass('disabled-btn');
+			}
+		});
+	}
+	trHover();
+
+	//td点击
+	function tdClick() {
+		$('.change td').click(function () {
+			$(this).find('input').focus();
+		});
+	}
+	tdClick();
+
+	//点击修改
+	$('.change-btn').click(function () {
+		$('tr.active').addClass('change');
+		$('tr.change input[disabled]').not('.input-disabled').removeAttr('disabled');
+		$('tr.change input.y-select-value').hide();
+		$('tr.change .y-select').show();
+	});
+
+
+	//保存
+	$('.arch-save').click(function () {
+		$('tr input').attr('disabled', 'disabled');
+		$('#myform').submit();
+		$('tr').removeClass('change').removeClass('active');
+	});
+
+	//取消
+	$('.arch-cancel').click(function () {
+		$('#myform')[0].reset()
+	});
+
+
+	$(document).click(function (e) {
+		$('.js-add').removeClass('active');
+		$('.y-option-list').hide();
+	});
+
+</script>
+</body>
+</html>

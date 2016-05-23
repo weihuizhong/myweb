@@ -1,0 +1,481 @@
+@import 'dev.scss';
+$orange: #f15a29;
+$gray: #5a5a5a;
+$bg: #eceeef;
+
+body{
+	background-color: #eee;
+}
+*{
+		box-sizing: border-box;
+}
+.payCenter{
+	margin:15px 0 0 0;
+	background-color: $bg;
+	color: $gray;
+}
+.p-title{
+	height: 54px;
+	line-height: 54px;
+	margin-bottom: 2px;
+	background-color: white;
+	position: relative;
+	span{
+		position: absolute;
+		display: block;
+		height: 28px;
+		line-height: 28px;
+		right:10px;
+		top:50%;
+		margin-top: -14px;
+		padding:0px 8px;
+		border-radius: 5px;
+		border:1px solid $bg;
+		color:$bg;
+		cursor: pointer;
+	}
+}
+.index-block{
+	color: $gray;
+	position: relative;
+	padding-left: 16px;
+	&:after{
+		position:absolute;
+		left:0;
+		top:50%;
+		margin-top: -10px;
+		content:'';
+		width: 5px;
+		height: 20px;
+		background-color: $orange;
+		z-index: 1;
+	}
+
+}
+.to-left{
+	float: left;
+}
+.p-show{
+	position: relative;
+	background-color: white;
+	height: 450px;
+}
+.show-left,.show-right{
+	width: getPercent(250,1400);
+	position: absolute;
+	top:0;
+	text-align: center;
+	height: 100%;
+}
+.show-left{
+	left:0;
+	border-right: 1px solid $bg;
+	.arrow{
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		right: -15px;
+		top:50%;
+		margin-top:-15px;
+		background-color: $bg;
+		border-radius: 50%;
+		span{
+			position: absolute;
+			left:4px;
+			top:4px;
+			display: block;
+			height: 22px;
+			width: 22px;
+			line-height: 22px;
+			border-radius: 50%;
+			background-color: $orange;
+			-webkit-transform: rotate(-90deg);
+			   -moz-transform: rotate(-90deg);
+			    -ms-transform: rotate(-90deg);
+			     -o-transform: rotate(-90deg);
+			        transform: rotate(-90deg);
+		}
+	}
+	.pay-pro{
+		position: absolute;
+		top:50%;
+		left:50%;
+		margin-top: -75px;
+		margin-left: -75px;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		border:2px solid $orange;
+		p{
+			height: 100%;
+			width: 100%;
+			background-image: url(../img/count/1.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-origin: border-box;
+		}
+		a{
+			display: block;
+			height: 100%;
+			width: 100%;
+			color:$orange;
+			padding-top: 96px;
+		}
+	}
+
+}
+.gray-arrow{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: -15px;
+	top:50%;
+	margin-top:-15px;
+	background-color: white;
+	border-radius: 50%;
+	span{
+		position: absolute;
+		left:4px;
+		top:4px;
+		display: block;
+		height: 22px;
+		width: 22px;
+		text-align: center;
+		line-height: 22px;
+		border-radius: 50%;
+		background-color: $bg;
+		-webkit-transform: rotate(-90deg);
+		   -moz-transform: rotate(-90deg);
+		    -ms-transform: rotate(-90deg);
+		     -o-transform: rotate(-90deg);
+		        transform: rotate(-90deg);
+		img{
+			vertical-align: middle;
+		}
+	}
+}
+
+.show-right{
+	right: 0;
+	padding:60px 0;
+	border-left: 1px solid $bg;
+	.arrow{
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		left: -15px;
+		top:50%;
+		margin-top:-15px;
+		background-color: $bg;
+		border-radius: 50%;
+		span{
+			position: absolute;
+			left:4px;
+			top:4px;
+			display: block;
+			height: 22px;
+			width: 22px;
+			line-height: 22px;
+			border-radius: 50%;
+			background-color: $orange;
+			-webkit-transform: rotate(-90deg);
+			   -moz-transform: rotate(-90deg);
+			    -ms-transform: rotate(-90deg);
+			     -o-transform: rotate(-90deg);
+			        transform: rotate(-90deg);
+		}
+	}
+	.export-btn,.print-btn{
+		position: absolute;
+		left:50%;
+		margin-left: -75px;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		border:2px solid $orange;
+		p{
+			height: 100%;
+			width: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-origin: border-box;
+		}
+		a{
+			display: block;
+			height: 100%;
+			width: 100%;
+			color:$orange;
+			padding-top: 96px;
+		}
+	}
+	.export-btn{
+		top:30px;
+		p{
+			
+			background-image: url(../img/count/12.png);
+		}
+	}
+	.print-btn{
+		top: 230px;
+		p{
+
+			background-image: url(../img/count/13.png);
+		}
+
+	}
+}
+.show-center{
+	width: getPercent(900,1400);
+	height: 100%;
+	position: absolute;
+	left:getPercent(250,1400);
+	right: getPercent(250,1400);
+	padding:40px 0;
+	.center-detail{
+		width: 94%;
+		padding:0 10px;
+		overflow: hidden;
+		margin:0 auto;
+		&>div{
+			width: getPercent(250,900);
+			margin:0 getPercent(25,900);
+		}
+	}
+	.import{
+		margin-bottom: 58px;
+	}
+	.creat{
+		margin:0 -5px;
+		position: relative;
+		.gray-arrow{
+			top: 0px;
+			left:50%;
+			margin-left:-15px;
+			span{
+				-webkit-transform: none;
+				   -moz-transform: none;
+				    -ms-transform: none;
+				     -o-transform: none;
+				        transform: none;
+			}
+		}
+		&:after{
+			content:'';
+			position: absolute;
+			height: 60px;
+			width: 3px;
+			background-color: $bg;
+			top:-60px;
+			left:50%;
+			margin-left:-1.5px;
+		}
+		&:before{
+			content:'';
+			position: absolute;
+			height: 3px;
+			width: 42px;
+			background-color: $bg;
+			top:58px;
+			right:-42px;
+			margin-top:-1.5px;
+		}
+		.qz-check{
+
+			input{
+				border:1px solid $bg;
+				background-color: transparent;
+				outline: none;
+				vertical-align: middle;
+				margin:0 0 2px 0!important;
+			}
+			span{
+				display: inline-block;
+				line-height: 16px;
+				font-size: 12px;
+				margin-left: 2px;
+			}
+		}
+	}
+	.op-1{
+		margin-bottom: 35px;
+		position: relative;
+		.gray-arrow{
+			top:160px;
+			left:50%;
+			margin-left:-15px;
+			z-index: 10;
+			span{
+				-webkit-transform: rotate(180deg);
+				   -moz-transform: rotate(180deg);
+				    -ms-transform: rotate(180deg);
+				     -o-transform: rotate(180deg);
+				        transform: rotate(180deg);
+			}
+		}
+
+		&:before{
+			content:'';
+			position: absolute;
+			height: 3px;
+			width: 50px;
+			background-color: $bg;
+			top:50%;
+			right:-50px;
+			margin-top:-1.5px;
+		}
+	}
+	.op-2{
+		position: relative;
+		&:after{
+			content:'';
+			position: absolute;
+			height: 36px;
+			width: 3px;
+			background-color: $bg;
+			top:-36px;
+			left:50%;
+			margin-left:-1.5px;
+		}
+		&:before{
+			content:'';
+			position: absolute;
+			height: 3px;
+			width: 50px;
+			background-color: $bg;
+			top:50%;
+			right:-50px;
+			margin-top:-1.5px;
+		}
+	}
+	.op-3{
+		margin-top: 34px;
+		position: relative;
+	}
+	.op-4{
+		margin-top:102px;
+		position: relative;
+	}
+
+}
+.box-container{
+	padding:16px 16px 8px 16px;
+}
+.set-border{
+	border:1px solid $bg;
+
+}
+.block{
+	height: 60px;
+	width: 100%;
+	line-height: 60px;
+	margin-bottom: 8px;
+	position: relative;
+	a{
+		display: block;
+		height: 100%;
+		width: 100%;
+		background-color: $bg;
+		color:$gray;
+		font-size: 14px;
+		position: relative;
+		padding-left:32%;
+		span{
+			position: absolute;
+			top:50%;
+			margin-top: -16px;
+			left: 6%;
+			width:32px;
+			height:32px;
+			display:block;
+			border-radius: 50%;
+			padding:0;
+			background-color: $orange;
+			text-align: center;
+			line-height:32px;
+		}
+		img{
+			vertical-align: middle;
+		}
+	}
+}
+.btm-op{
+	margin-top: 15px;
+	background-color: white;
+	height: 56px;
+	position: relative;
+	.index-block{
+		line-height: 56px;
+	}
+	.options{
+		position: absolute;
+		right: 10px;
+		top:50%;
+		height: 32px;
+		margin-top: -16px;
+		button{
+			background-color: transparent;
+			border:none;
+			background-repeat: no-repeat;
+			outline: transparent;
+			span{
+				width: 32px;
+				height: 32px;
+				display:inline-block;
+				border-radius: 50%;
+				padding:0;
+				background-color: $bg;
+				text-align: center;
+				line-height: 32px;
+				margin-right: 10px;
+			}
+			img{
+				vertical-align: middle;
+			}
+		}
+
+	}
+}
+.sel{
+	a{
+		background-color: $orange !important;
+		color:white !important;
+		span{
+			background-color: white !important;
+		}
+	}
+
+}
+.sup-btn{
+	border:3px solid white;
+	background-color: $bg;
+	padding:0 3px;
+	border-radius: 5px;
+	height: 24px;
+	position: absolute;
+	right: -12px;
+	top:-5px;
+	z-index: 100;
+	line-height: 20px;
+	font-size: 12px;
+	color:$orange;
+}
+.sub-btn{
+	@extend .sup-btn;
+	top:inherit;
+	bottom: -5px;
+}
+.sup-btn:hover{
+	color: white;
+	background-color: $orange !important;
+}
+.creat-btn, .import2,.import1 {
+	position: relative;
+}
+
+@media screen and (max-width: 1550px){
+	.my-check{
+		display: block;
+		text-align: left;
+		line-height: 16px;
+	}
+}

@@ -1,0 +1,44 @@
+.pb-footer {
+  .page-nav {
+    box-sizing:border-box;
+    &:after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+    position: static;
+    bottom: auto;
+    height: auto;
+    color: #5d5d5d;
+    padding: 6px;
+    background: #fff;
+    right: 0px;
+    left: 209px;
+    font-size: 14px;
+    border-top: none;
+    a, span {
+      font-size: 14px;
+    }
+
+    .pull-left {
+      float: left;
+      line-height: 34px;
+    }
+    .pull-right {
+      float: right;
+      line-height: 34px;
+      input {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+    }
+    input {
+      display: inline-block;
+    }
+  }
+
+  .page-nav i, .page-nav .link a, .page-nav span, .page-nav em {
+    margin-right: 5px;
+    line-height: inherit;
+  }
+}

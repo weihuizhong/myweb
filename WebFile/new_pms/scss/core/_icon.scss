@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+@mixin icon($width:8px , $height:10px) {
+  display: block;
+  width: $width;
+  height: $height;
+}
+@mixin bgCenter(){
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+//蓝色左三角形
+.icon-tri-blue-right {
+  background-image: url(../img/icon/tri-blue-right.png);
+  @include icon();
+}
+
+//白色下三角
+.icon-tri-white-right {
+  background-image: url(../img/icon/tri-white-bottom.png);
+  @include icon(5px, 4px);
+}
+
+//灰色右下角，添加按钮
+.icon-tri-add-defalut {
+  background-image: url(../img/icon/tri-add-defalut.png);
+  @include icon(20px, 20px);
+  cursor: pointer;
+}
+
+//蓝色右下角，添加按钮
+.icon-tri-add-select {
+  background-image: url(../img/icon/tri-add-select.png);
+  @include icon(20px, 20px);
+  cursor: pointer;
+}
+
+//搜索
+.icon-search {
+  background-image: url(../img/icon/search.png);
+  @include icon(16px, 15px);
+}
+
+//原型添加按钮
+%icon-circle-add{
+  background-image: url(../img/icon/circle-add.png);
+  @include icon(24px,24px);
+  @include bgCenter;
+}
+
+//启用按钮
+%icon-circle-using{
+  background-image: url(../img/icon/circle-using.png);
+  @include icon(23px,23px) ;
+  @include bgCenter;
+}
+
+//禁用按钮
+%icon-circle-ban{
+  background-image: url(../img/icon/circle-ban.png);
+  @include icon(23px,23px);
+  @include bgCenter;
+}
+
+//眼睛
+%icon-eye{
+  background-image: url(../img/icon/icon-eye.png);
+  @include icon(12px,8px);
+  @include bgCenter;
+}
+
+//打勾
+%icon-checked{
+  background-image: url(../img/icon/icon-checked.png);
+  @include icon(12px,12px);
+  @include bgCenter;
+}
+
+//查询
+.icon-search-big{
+  background-image: url(../img/icon/icon-search-big.png);
+  @include icon(17px,18px);
+  @include bgCenter;
+}

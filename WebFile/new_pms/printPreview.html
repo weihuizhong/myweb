@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" href="css/printBill.css">
+	<link rel="stylesheet" type="text/css" href="css/printPreview.css">
+</head>
+<body>
+<div id="pb" class="pb">
+	<header class="pb-title">
+		<h2 class="current-title">打印结果</h2>
+	</header>
+
+	<!--正文-->
+	<div class="pb-content">
+		<div class="print-result">
+			<p><span>60</span> 张打印成功，<span>8</span> 张打印失败</p>
+		</div>
+		<!--表格-->
+		<form action="###">
+			<div class="pb-table-wrap">
+				<div class="pb-table">
+					<table class="pb-table-body">
+						<thead>
+						<tr class="thead">
+							<th class="checkbox-phlygon">
+								<input id="all" type="checkbox">
+								<label for="all"></label>
+							</th>
+							<th class="">费用时间</th>
+							<th>房号</th>
+							<th>缴费名称</th>
+							<th>合计金额</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>
+								<input id="input1" class="checkbox-cycle" type="checkbox">
+								<label for="input1"></label>
+							</td>
+							<td><input disabled class="input-small" type="text" value="205"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="一栋"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="张小四"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="1350"></td>
+						</tr>
+						<tr>
+							<td>
+								<input id="input10" class="checkbox-cycle" type="checkbox">
+								<label for="input10"></label>
+							</td>
+							<td><input disabled class="input-small" type="text"
+							           value="205"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="一栋"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="张小四"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="1350"></td>
+						</tr>
+						<tr>
+							<td>
+								<input id="input2" class="checkbox-cycle" type="checkbox">
+								<label for="input2"></label>
+							</td>
+							<td><input disabled class="input-small" type="text"
+							           value="205"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="一栋"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="张小四"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="1350"></td>
+						</tr>
+						<tr>
+							<td>
+								<input id="input3" class="checkbox-cycle" type="checkbox">
+								<label for="input3"></label>
+							</td>
+							<td><input disabled class="input-small" type="text"
+							           value="205"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="一栋"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="张小四"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="1350"></td>
+						</tr>
+						<tr>
+							<td>
+								<input id="input4" class="checkbox-cycle" type="checkbox">
+								<label for="input4"></label>
+							</td>
+							<td><input disabled class="input-small" type="text"
+							           value="205"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="一栋"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="张小四"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="1350"></td>
+						</tr>
+						<tr>
+							<td>
+								<input id="input5" class="checkbox-cycle" type="checkbox">
+								<label for="input5"></label>
+							</td>
+							<td><input disabled class="input-small" type="text"
+							           value="205"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="一栋"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="张小四"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="1350"></td>
+						</tr>
+						<tr>
+							<td>
+								<input id="input6" class="checkbox-cycle" type="checkbox">
+								<label for="input6"></label>
+							</td>
+							<td><input disabled class="input-small" type="text"
+							           value="205"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="一栋"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="张小四"></td>
+							<td><input disabled class="input-small" type="text"
+							           value="1350"></td>
+						</tr>
+						</tbody>
+					</table>
+					<ul class="pb-btn-group">
+						<li class="pb-btn pb-print"><a href="###">重试</a></li>
+						<li class="pb-btn pb-cancel"><a href="###">确定</a></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function () {
+		function selectOption() {
+			var checkboxCycle = $('.checkbox-cycle');
+			var checkLen = checkboxCycle.length;
+			var checkAll = $('#all');
+			//全选
+			checkAll.click(function(){
+				checkboxCycle.prop('checked',$(this).prop('checked'));
+			});
+			checkboxCycle.click(function(){
+				if($('.checkbox-cycle:checked').length >= checkLen){
+					checkAll.prop('checked',true);
+				}else{
+					checkAll.prop('checked',false);
+				}
+			});
+		}
+		selectOption()
+	})
+</script>
+</body>
+</html>

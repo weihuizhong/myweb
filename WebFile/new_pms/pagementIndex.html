@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.css">
+  <link rel="stylesheet" href="css/pay.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/store.min.js"></script>
+  <script type="text/javascript" src="js/jquery.resizableColumns.min.js"></script>
+  <style>
+    img.ribbon {
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      border: 0;
+      cursor: pointer; }
+
+    .container {
+      margin-top: 60px; }
+
+    #username-column {
+      width: 50px; }
+      .rc-handle-container {
+        position: relative; }
+
+      .rc-handle {
+        position: absolute;
+        width: 7px;
+        cursor: ew-resize;
+        margin-left: -3px; }
+
+  </style>
+</head>
+<body>
+   <div class="my-table" >
+       <div class="left-fixed">
+         <table data-resizable-columns-id="demo-table">
+             <thead>
+                 <tr class="thead">
+                   <th data-resizable-column-id="a" ><p>项dd目1</p></th>
+                   <th data-resizable-column-id="b" ><p>项目2</p></th>
+                   <th data-resizable-column-id="c" ><p>项目3</p></th>
+                   <th data-resizable-column-id="d" ><p>项目4</p></th>
+                   <th data-resizable-column-id="e" ><p>项目5</p></th>
+                   <th data-resizable-column-id="f" ><p>项目6</p></th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                   <td width="100"><p>654sdddddddddddddd654dd</p></td>
+                   <td width="100"><p>2dddddddddddddddddddddd</p></td>
+                   <td width="100"><p>3ddddddddddddd</p></td>
+                   <td width="100"><p>4dddddddddddddddddddd</p></td>
+                   <td width="100"><p>5dddddddddddddddddddddd</p></td>
+                   <td width="100"><p>6dddddddddd</p></td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                 </tr>
+             </tbody>
+         </table>
+       </div>
+       <div class="right-active">
+         <table>
+            <thead>
+             <tr class="thead">
+               <th data-resizable-column-id="h">项asdafffddddddd目19</th>
+               <th data-resizable-column-id="s">项目20</th>
+               <th data-resizable-column-id="dd">项目21</th>
+               <th data-resizable-column-id="ff">项目22</th>
+               <th data-resizable-column-id="gg">项目23</th>
+               <th data-resizable-column-id="cc">项目24</th>
+               <th data-resizable-column-id="zz">项目25</th>
+               <th data-resizable-column-id="xx">项目26</th>
+               <th data-resizable-column-id="cc">项目27</th>
+               <th data-resizable-column-id="aa">项目28</th>
+               <th data-resizable-column-id="cg">项目27</th>
+               <th data-resizable-column-id="ha">项目28</th>
+             </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    
+                  <td>asdf11</td>
+                  <td>asdf12</td>
+                  <td>asdf13</td>
+                  <td>asdf14</td>
+                  <td>asdf15</td>
+                  <td>asdf16</td>
+                  <td>asdf17</td>
+                  <td>asdf18</td>
+                  <td>asdf19</td>
+                  <td>asdf20</td>
+                  <td>asdf</td>
+                  <td>aalksjdfljasldfjlasjdflkajsdfljasldkjfljaskdf</td>
+                </tr>
+                <tr>
+
+                  <td>asdf11</td>
+                  <td>asdf12</td>
+                  <td>asdf13</td>
+                  <td>asdf14</td>
+                  <td>asdf15</td>
+                  <td>asdf16</td>
+                  <td>asdf17</td>
+                  <td>asdf18</td>
+                  <td>asdf19</td>
+                  <td>asdf20</td>
+                  <td>asdf</td>
+                  <td>aalksjdfljasldfjlasjdflkajsdfljasldkjfljaskdf</td>
+                </tr>
+                <tr>
+
+                  <td>asdf11</td>
+                  <td>asdf12</td>
+                  <td>asdf13</td>
+                  <td>asdf14</td>
+                  <td>asdf15</td>
+                  <td>asdf16</td>
+                  <td>asdf17</td>
+                  <td>asdf18</td>
+                  <td>asdf19</td>
+                  <td>asdf20</td>
+                  <td>asdf</td>
+                  <td>aalksjdfljasldfjlasjdflkajsdfljasldkjfljaskdf</td>
+                </tr>
+                <tr>
+
+                  <td>asdf11</td>
+                  <td>asdfsddddddddddddddddddddddd12</td>
+                  <td>asdf13</td>
+                  <td>asdf14</td>
+                  <td>asdf15</td>
+                  <td>asdf16</td>
+                  <td>asdf17</td>
+                  <td>asdf18</td>
+                  <td>asdf19</td>
+                  <td>asdf20</td>
+                  <td>asdf</td>
+                  <td>aalksjdfljasldfjlasjdflkajsdfljasldkjfljaskdf</td>
+                </tr>
+                <tr>
+
+                  <td>asdf11</td>
+                  <td>asdf12</td>
+                  <td>asdf13</td>
+                  <td>asdf14</td>
+                  <td>asdf15</td>
+                  <td>asdf16</td>
+                  <td>asdfasdf17</td>
+                  <td>asdf18</td>
+                  <td>asdf19</td>
+                  <td>asdf20</td>
+                  <td>asdf</td>
+                  <td>aalksjdfljasldfjlasjdflkajsdfljasldkjfljaskdf</td>
+                </tr>
+                <tr>
+
+                  <td>asdf11</td>
+                  <td>asdf12</td>
+                  <td>asdf13</td>
+                  <td>asdf14</td>
+                  <td>asdsdfasdff15</td>
+                  <td>asdf16</td>
+                  <td>asdf17</td>
+                  <td>asdf18</td>
+                  <td>asdf19</td>
+                  <td>asdf20</td>
+                  <td>asdf</td>
+                  <td>aalksjdfljasldfjlasjdflkajsdfljasldkjfljaskdf</td>
+                </tr>
+                <tr>
+
+                  <td>asdf11</td>
+                  <td>asdf12</td>
+                  <td>asdf13</td>
+                  <td>asdf14</td>
+                  <td>asdf15</td>
+                  <td>asdasdfasdff16</td>
+                  <td>asdf17</td>
+                  <td>asdf18</td>
+                  <td>asdf19</td>
+                  <td>asdf20</td>
+                  <td>asdf</td>
+                  <td>aalksjdfljasldfjlasjdflkajsdfljasldkjfljaskdf</td>
+                </tr>
+                <tr>
+
+                  <td>asdf11</td>
+                  <td>asdf12</td>
+                  <td>asdf13</td>
+                  <td>asdf14</td>
+                  <td>asdf15</td>
+                  <td>asdf16</td>
+                  <td>asdf17</td>
+                  <td>asdf18</td>
+                  <td>asdf19</td>
+                  <td>asdf20</td>
+                  <td>asdf</td>
+                  <td>aalksjdfljasldfjlasjdflkajsdfljasldkjfljaskdf</td>
+                </tr>
+                <tr>
+
+                  <td>asdf11</td>
+                  <td>asdf12</td>
+                  <td>asdf13</td>
+                  <td>asdf14</td>
+                  <td>asdf15</td>
+                  <td>asdf16</td>
+                  <td>asdf17</td>
+                  <td>asdf18</td>
+                  <td>asdf19</td>
+                  <td>asdf20</td>
+                  <td>asdf</td>
+                  <td>aalksjdfljasldfjlasjdflkajsdfljasldkjfljaskdf</td>
+                </tr>
+                <tr>
+
+                  <td>asdf11</td>
+                  <td>asdf12</td>
+                  <td>asdf13</td>
+                  <td>asdf14</td>
+                  <td>asdf15</td>
+                  <td>asdf16</td>
+                  <td>asdf17</td>
+                  <td>asdf18</td>
+                  <td>asdf19</td>
+                  <td>asdf20</td>
+                  <td>asdf</td>
+                  <td>aalksjdfljasldfjlasjdflkajsdfljasldkjfljaskdf</td>
+                </tr>
+            </tbody>
+            
+         </table>
+       </div>
+       <div class="count-total">
+         <p>合计： <span class="peo-count">126户</span> <span class="mon-count">￥1234123.234</span></p>
+       </div>
+     </div>
+
+   <script>
+     $(function(){
+       $(".left-fixed table").resizableColumns({
+         store: store
+       });
+       // fixTable()
+       // $('.rc-handle').on('mousedown', function () {
+       //     $(window).on('mousemove', function () {
+       //          fixTable()
+       //     })
+       //      $(window).on('mouseup', function () {
+       //          $(window).off('mousemove')
+       //     })
+       // })
+       // function fixTable() {
+       //     var lTable = $('.left-fixed table')
+       //     var lwidth = 0
+       //     lTable.find('th').each(function() {
+       //       lwidth += $(this).outerWidth()
+       //     })
+       //     $('.left-fixed').width(lwidth)
+       //     lTable.css({
+       //      width: lwidth,
+       //      maxWidth: lwidth
+       //     })
+       //     $('.right-active').css({
+       //      marginLeft: lwidth +'px'
+       //     })
+       // }
+     });
+   </script>
+</body>
+</html>

@@ -1,0 +1,521 @@
+@charset "utf-8";
+@import "core/_icon";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+$defaultColor: #383838;
+$tableColor: #d9d9d9;
+
+%clearfix:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.arch {
+  padding-left: 11px;
+  padding-right: 20px;
+  height: 100%;
+  background: #f7f7f7;
+  font-family: "Microsoft yahei", "sans-serif", "宋体";
+  color: $defaultColor;
+  display: flex;
+  flex-direction: column;
+
+  //设置基本样式
+  .btn-group {
+    @extend %clearfix;
+
+    li {
+      float: left;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  li, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .hidden {
+    display: none;
+  }
+  sub {
+    vertical-align: bottom;
+  }
+  input {
+    color: $defaultColor;
+  }
+
+  //通用按钮
+  .arch-btn {
+    width: 70px;
+    text-align: center;
+    line-height: 28px;
+    margin-right: 12px;
+    font-size: 14px;
+    border-radius: 3px;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  //select
+  .y-select {
+    position: relative;
+    box-sizing: border-box;
+    width: 62px;
+    height: 18px;
+    border: 1px solid #57a3f1;
+    border-right-width: 16px;
+    margin: 0 8px;
+    font-size: 12px;
+    cursor: pointer;
+
+    i {
+      position: absolute;
+      right: -10px;
+      top: 7px;
+    }
+
+    .y-option-list {
+      display: none;
+      position: absolute;
+      top: 17px;
+      left: -1px;
+      width: calc(100% + 16px);
+      border: 1px solid $tableColor;
+      background-color: #fffaf8;
+      text-align: left;
+      text-indent: 12px;
+      z-index: 999;
+      li:hover {
+        background-color: #f6feff;
+      }
+    }
+  }
+
+  //标题 按钮
+  @at-root {
+    //标题
+    .arch-title {
+      h2 {
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 100px;
+        margin: 0;
+      }
+    }
+
+    //按钮组
+    .arch-btn-bar {
+      @extend %clearfix;
+      margin-bottom: 30px;
+      position: relative;
+
+      //装饰
+      @at-root {
+        .arch-decorate {
+          position: absolute;
+          bottom: -15px;
+          right: 25%;
+        }
+      }
+
+      @at-root {
+        //导如导出按钮
+        .import-export {
+          float: left;
+
+          li {
+            text-align: center;
+            line-height: 26px;
+            padding-right: 35px;
+            padding-left: 30px;
+            margin-right: 15px;
+            border: 1px solid #57a3f1;
+            border-radius: 3px;
+            position: relative;
+            font-size: 14px;
+            color: #2c2c2c;
+          }
+
+          i {
+            position: absolute;
+            right: 7px;
+            top: 9px;
+          }
+
+          a {
+            display: block;
+          }
+        }
+
+        //增加修改按钮
+        .and-change {
+          float: right;
+          color: #fff;
+          li {
+            border-radius: 3px;
+          }
+
+          .add-btn {
+            background-color: #e87751;
+          }
+          .change-btn {
+            background-color: #57a3f1;
+          }
+          .disabled-btn {
+            background-color: #d9d9d9;
+            a {
+              cursor: default;
+            }
+          }
+          a {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  //主题
+  @at-root {
+    .arch-content {
+      display: flex;
+      margin-bottom: 50px;
+      flex: 1;
+
+      //侧栏
+      @at-root {
+        .arch-aside {
+          position: relative;
+          z-index: 999;
+          box-sizing: border-box;
+          width: 149px;
+          background-color: #edfafb;
+          padding: 12px;
+          margin-right: 12px;
+
+          @at-root {
+            .arch-search {
+              position: relative;
+              box-sizing: border-box;
+              border: 1px solid #d9d9d9;
+              width: 100%;
+              height: 30px;
+              background-color: #fff;
+              input {
+                border: none;
+                outline: none;
+                width: 60%;
+                line-height: 26px;
+                padding-left: 12px;
+                font-size: 12px;
+                color: #d9d9d9;
+                vertical-align: top;
+              }
+              .icon-search {
+                position: absolute;
+                right: 12px;
+                top: 7px;
+              }
+            }
+          }
+        }
+      }
+      //表格
+      $tableColor: #d9d9d9;
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        th {
+          white-space: nowrap;
+          height: 61px;
+          font-size: 14px;
+          background-color: #f2f2f2;
+          border-right: 1px solid #fff;
+        }
+
+        td {
+          height: 41px;
+        }
+        .input-small {
+          margin: 7px 8px;
+          border: none;
+          background-color: transparent;
+          text-align: center;
+        }
+
+        input {
+          border: 2px solid #c9e4ff !important;
+          box-sizing: border-box;
+        }
+        input[disabled] {
+          border: none !important;
+          cursor: pointer !important;
+        }
+      }
+      .arch-table-wrap {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+      }
+
+      //固定头部
+      @at-root {
+        .arch-table-header{
+          position: absolute;
+          top: -1px;
+          left: 0;
+          z-index: 10;
+          border-top: 1px solid $tableColor;
+        }
+      }
+
+      @at-root {
+        .arch-table {
+          flex: 1;
+          position: relative;
+          margin-bottom: 50px;
+          overflow: auto;
+
+          td {
+            border: 1px solid $tableColor;
+            &:first-child {
+              border-left: none;
+            }
+          }
+
+          .my-table {
+            overflow-x: hidden;
+          }
+        }
+
+        @at-root {
+          .table-container {
+            position: relative;
+            text-align: center;
+            background-color: white;
+            border: 1px solid #d9d9d9;
+            border-bottom: none;
+            overflow: auto;
+          }
+
+          //左table
+          .left-fixed {
+            width: 360px;
+            position: absolute;
+            z-index: 999;
+            left: 0;
+            top: 0;
+
+            td {
+              //表头设置宽度
+              $thWidthList: 56px 40px 50px 30px 35px 35px;
+              @warn length($thWidthList);
+              @for $index from 1 through length($thWidthList) {
+                &:nth-child(#{$index}) {
+                  .input-small {
+                    width: nth($thWidthList, $index);
+                  }
+                }
+              }
+            }
+
+            td {
+              position: relative;
+              &.active {
+                i {
+                  @extend .icon-tri-add-select;
+                }
+              }
+              i {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+              }
+            }
+          }
+
+          //右table
+          .right-active {
+            position: relative;
+            background-color: #fff;
+            margin-left: 360px;
+            overflow: hidden;
+
+            table {
+              th {
+                &:first-child {
+                  border-left: 1px solid #fff;
+                }
+
+                &:last-child {
+                  border-right: 1px solid $tableColor;
+                }
+              }
+              //托盘
+              .arch-tray-th {
+                font-size: 12px;
+                padding: 0 20px;
+              }
+              //支付
+              .arch-charge-th {
+                font-size: 12px;
+                padding: 0 20px;
+              }
+              //托盘
+              .arch-tray-td, .arch-charge-td {
+                .y-select {
+                  margin: 0 auto;
+                  cursor: pointer;
+                }
+              }
+
+              td {
+                //表头设置宽度
+                $rightThWidthList: 70px 88px 80px 50px 144px 62px 62px 80px 120px 85px 85px 85px;
+                @for $i from 1 through length($rightThWidthList) {
+                  &:nth-child(#{$i}) {
+                    .input-small {
+                      width: nth($rightThWidthList, $i);
+                    }
+                  }
+                }
+
+                &:last-child {
+                  border-right: none;
+                }
+              }
+
+              //房屋类型
+              .house-type {
+                width: 80px;
+              }
+            }
+
+            tr {
+              background-color: #f6feff;
+
+              &:last-child, &:nth-last-child(2) {
+                .y-option-list {
+                  bottom: 17px;
+                  top: auto;
+                }
+              }
+            }
+          }
+
+          .row-sel {
+            background-color: #fffaf8 !important;
+          }
+
+          tr {
+            &.change {
+              background-color: #fff !important;
+            }
+            &.active {
+              background-color: #fffaf8 !important;
+            }
+          }
+        }
+
+        //滚动条
+        .scroll-y {
+          position: absolute;
+          width: 100%;
+          height: 15px;
+          border: 1px solid #C1C1C1;
+          top: 108px;
+          left: 0;
+          box-sizing: border-box;
+          .scroll-y-bar {
+            position: absolute;
+            width: 100px;
+            height: 10px;
+            background-color: #C1C1C1;
+            bottom: 1px;
+            left: 360px;
+            cursor: pointer;
+          }
+        }
+
+        //分页
+        @at-root {
+
+          .arch-footer {
+            @extend %clearfix;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            margin-top: 15px;
+
+            @at-root {
+              .arch-page-nav {
+                font-size: 14px;
+                line-height: 30px;
+                color: $defaultColor;
+                width: 50%;
+                float: left;
+
+                a {
+                  text-decoration: none;
+                  color: inherit;
+
+                  &.active, &:hover {
+                    text-decoration: underline;
+                    color: #004a7a;
+                  }
+                }
+              }
+
+              .page-last {
+                padding-right: 20px;
+                background: url(../img/icon/right.png) no-repeat right;
+              }
+
+              .page-frist {
+                padding-left: 20px;
+                background: url(../img/icon/left.png) no-repeat left;
+              }
+            }
+
+            //保存和取消按钮
+            @at-root {
+              .save-cencel {
+                float: right;
+
+                @at-root {
+                  .arch-save {
+                    background-color: #e87751;
+                    color: #fff;
+                  }
+
+                  .arch-cencel {
+                    border: 1px solid #e87751;
+                    color: #e87751;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

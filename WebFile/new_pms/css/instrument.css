@@ -1,0 +1,560 @@
+@charset "UTF-8";
+.icon-tri-blue-right {
+  background-image: url(../img/icon/tri-blue-right.png);
+  display: block;
+  width: 8px;
+  height: 10px;
+}
+
+.icon-tri-white-right {
+  background-image: url(../img/icon/tri-white-bottom.png);
+  display: block;
+  width: 5px;
+  height: 4px;
+}
+
+.icon-tri-add-defalut {
+  background-image: url(../img/icon/tri-add-defalut.png);
+  display: block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.icon-tri-add-select {
+  background-image: url(../img/icon/tri-add-select.png);
+  display: block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.icon-search {
+  background-image: url(../img/icon/search.png);
+  display: block;
+  width: 16px;
+  height: 15px;
+}
+
+.icon-search-big {
+  background-image: url(../img/icon/icon-search-big.png);
+  display: block;
+  width: 17px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Microsoft yahei';
+}
+
+.arch .btn-group:after, .arch-btn-bar:after, .arch-footer:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.arch {
+  padding-left: 11px;
+  padding-right: 20px;
+  height: 100%;
+  /*background: $backColor;*/
+  font-family: "Microsoft yahei", "sans-serif", "宋体";
+  color: #383838;
+  display: flex;
+  flex-direction: column;
+}
+
+.arch .btn-group li {
+  float: left;
+}
+
+.arch .btn-group a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.arch li, .arch ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arch .hidden {
+  display: none;
+}
+
+.arch sub {
+  vertical-align: bottom;
+}
+
+.arch input {
+  color: #383838;
+}
+
+.arch .table-title {
+  text-align: center;
+  /*padding:20px 0;*/
+  margin-bottom: 20px;
+}
+
+.arch .table-title span {
+  color: #4d4d4d;
+}
+
+.arch .table-title .qz-date {
+  width: 246px;
+  height: 30px;
+  border: 1px solid #b2b2b2;
+  background-image: url(../img/icon/days.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-origin: content-box;
+  outline-color: transparent;
+  padding: 0 6px;
+  position: relative;
+}
+
+.arch .arch-btn {
+  width: 70px;
+  text-align: center;
+  line-height: 28px;
+  margin-right: 12px;
+  font-size: 14px;
+  border-radius: 3px;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.arch .arch-btn a {
+  color: #fff;
+  line-height: 25px;
+}
+
+.arch .y-select {
+  position: relative;
+  box-sizing: border-box;
+  width: 62px;
+  height: 18px;
+  border: 1px solid #57a3f1;
+  border-right-width: 16px;
+  margin: 0 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.arch .y-select i {
+  position: absolute;
+  right: -10px;
+  top: 7px;
+}
+
+.arch .y-select .y-option-list {
+  display: none;
+  position: absolute;
+  top: 17px;
+  left: -1px;
+  width: calc(100% + 16px);
+  border: 1px solid #d9d9d9;
+  background-color: #fffaf8;
+  text-align: left;
+  text-indent: 12px;
+  z-index: 999;
+}
+
+.arch .y-select .y-option-list li:hover {
+  background-color: #f6feff;
+}
+
+.arch-title h2 {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 74px;
+  margin: 0;
+}
+
+.arch-btn-bar {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.arch-btn-bar .electricity {
+  position: absolute;
+  /*overflow: hidden;*/
+  height: 40px;
+  bottom: -10px;
+}
+
+.arch-btn-bar .electricity li {
+  display: inline-block;
+  width: 90px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  border-bottom: none;
+  height: 39px;
+  line-height: 40px;
+  background-color: #f2f2f2;
+  color: #383838;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.arch-btn-bar .electricity li:nth-child(2) {
+  margin-left: 3px;
+  left: 93px;
+}
+
+.import-export {
+  float: right;
+}
+
+.import-export li {
+  text-align: center;
+  line-height: 25px;
+  padding-right: 35px;
+  padding-left: 30px;
+  /*margin-right: 15px;*/
+  border: 1px solid #57a3f1;
+  border-radius: 3px;
+  position: relative;
+  font-size: 14px;
+  color: #2c2c2c;
+}
+
+.import-export i {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+}
+
+.import-export a {
+  display: block;
+  line-height: 25px;
+}
+
+.and-change {
+  float: right;
+  color: #fff;
+}
+
+.and-change li {
+  border-radius: 3px;
+}
+
+.and-change .add-btn {
+  background-color: #e87751;
+}
+
+.and-change .change-btn, .and-change .arch .change-ins-btn, .arch .and-change .change-ins-btn {
+  background-color: #57a3f1;
+}
+
+.and-change .disabled-btn {
+  background-color: #d9d9d9;
+}
+
+.and-change .disabled-btn a {
+  cursor: default;
+}
+
+.and-change a {
+  display: block;
+}
+
+.arch .table-active {
+  background-color: #57a3f1 !important;
+  border-color: #57a3f1 !important;
+  color: #fff !important;
+  bottom: -1px !important;
+  height: 40px !important;
+}
+
+.arch-content {
+  display: flex;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+.arch-content table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.arch-content table th {
+  white-space: nowrap;
+  height: 58px;
+  line-height: 58px;
+  font-size: 14px;
+  background-color: #f2f2f2;
+  font-weight: 600;
+  color: #383838;
+  text-align: center;
+}
+
+.arch-content table td {
+  height: 41px;
+  line-height: 41px;
+  width: 60px;
+  font-size: 12px;
+  box-sizing: border-box;
+  color: #383838;
+  vertical-align: middle;
+}
+
+.arch-content table .input-small {
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 39px;
+}
+
+.arch-content table input {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #c9e4ff !important;
+  box-sizing: border-box;
+  display: block;
+  font-size: 12px;
+  color: #383838;
+}
+
+.arch-content table input[disabled] {
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.arch-table-wrap {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.arch-table-header {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 10;
+}
+
+.arch-table {
+  flex: 1;
+  position: relative;
+  margin-bottom: 90px;
+  width: 100%;
+  overflow: auto;
+  /*border: 1px solid $tableColor;*/
+}
+
+.arch-table td {
+  border: 1px solid #d9d9d9;
+}
+
+.arch-table td:first-child {
+  border-left: none;
+}
+
+.arch-table .my-table {
+  overflow-x: hidden;
+}
+
+.table-container {
+  position: relative;
+  text-align: center;
+  background-color: white;
+  /*border: 1px solid $tableColor;*/
+  border-bottom: none;
+  min-width: 1000px;
+}
+
+.right-active {
+  position: relative;
+  background-color: #fff;
+  overflow: auto;
+  width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d9d9d9;
+}
+
+.right-active table {
+  width: 100%;
+}
+
+.right-active table th:last-child {
+  border-right: 1px solid #d9d9d9;
+}
+
+.right-active table td:last-child {
+  border-right: none;
+}
+
+.right-active tr {
+  background-color: #fff;
+}
+
+.right-active tr:last-child .y-option-list, .right-active tr:nth-last-child(2) .y-option-list {
+  bottom: 17px;
+  top: auto;
+}
+
+.row-sel {
+  background-color: #fffaf8 !important;
+}
+
+tr.change {
+  /*background-color: #fff !important;*/
+}
+
+tr.active {
+  background-color: #fffaf8 !important;
+}
+
+.arch-footer {
+  position: absolute;
+  height: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 1px;
+}
+
+.arch-footer * {
+  line-height: 34px;
+}
+
+.arch-footer .page-nav {
+  height: 34px;
+  position: static;
+  bottom: 30px;
+  color: #5d5d5d;
+  padding: 6px;
+  background: transparent;
+  left: 0;
+  border-top: none;
+  float: left;
+  font-size: 14px;
+  width: auto;
+}
+
+.arch-footer .page-nav i, .arch-footer .page-nav .link a, .arch-footer .page-nav span, .arch-footer .page-nav em {
+  display: block;
+  float: left;
+  color: #878787;
+  margin-right: 16px;
+}
+
+.arch-footer .page-nav span, .arch-footer .page-nav .link a:hover {
+  color: #f2793e;
+}
+
+.arch-footer .page-nav .jump {
+  color: #5d5d5d;
+}
+
+.arch-footer .page-nav .txt28 {
+  width: 36px;
+  height: 20px;
+  line-height: 20px;
+  margin: 0 6px;
+  text-align: center;
+  font-family: Arial;
+  vertical-align: middle;
+}
+
+.arch-footer .page-nav .btn_jump {
+  color: #fff;
+  width: 48px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background: #57A3F1;
+  border-radius: 2px;
+  margin-left: 10px;
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 14px;
+}
+
+.arch-footer .pull-left {
+  float: left;
+}
+
+.arch-footer .pull-right {
+  float: left !important;
+}
+
+.arch-footer .save-cancel {
+  margin-top: 5px;
+}
+
+.arch-footer .import-export {
+  margin-top: 5px;
+}
+
+.save-cancel {
+  float: right;
+}
+
+.arch-save {
+  background-color: #e87751 !important;
+}
+
+.arch-save a {
+  color: #fff !important;
+}
+
+.arch-cancel {
+  border: 1px solid #e87751 !important;
+}
+
+.arch-cancel a {
+  color: #e87751 !important;
+}
+
+.arch .del-btn {
+  border: 1px solid #e87751;
+}
+
+.arch .del-btn a {
+  color: #e87751;
+}
+
+.arch tr:hover:not(.change) {
+  background-color: #fffaf8 !important;
+}
+
+.arch .table-title {
+  text-align: left;
+}
+
+.arch .table-title label {
+  position: relative;
+}
+
+.arch .table-title .ins-input {
+  width: 220px;
+  padding: 0 30px 0px 5px;
+  height: 28px;
+  border: 1px solid #d9d9d9;
+}
+
+.arch .table-title .icon-search {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=../maps/instrument.css.map */

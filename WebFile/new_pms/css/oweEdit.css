@@ -1,0 +1,469 @@
+@charset "UTF-8";
+.detail-top, .detail-bottom {
+  *zoom: 1;
+}
+
+.detail-top:before, .detail-bottom:before, .detail-top:after, .detail-bottom:after {
+  content: "";
+  display: table;
+}
+
+.detail-top:after, .detail-bottom:after {
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Microsoft yahei';
+}
+
+body {
+  margin: 0;
+}
+
+.qz-edit {
+  padding-top: 10px;
+  margin: 0px 0px 0px 15px;
+  overflow: hidden;
+  height: 546px;
+}
+
+.qz-left {
+  float: left;
+}
+
+.pic-detail {
+  margin-top: 20px;
+}
+
+.set-mar-0 {
+  margin-top: 0;
+}
+
+/*左边选择*/
+.pic-mon {
+  position: absolute;
+  overflow-y: scroll;
+  left: 0;
+  top: 0;
+  width: 177px;
+  background-color: #fff8dc;
+  padding-top: 20px;
+  padding-left: 15px;
+  height: 546px;
+}
+
+.pic-mon h2 {
+  font-size: 14px;
+  padding-bottom: 15px;
+}
+
+.pic-mon .pic-head span {
+  font-size: 14px;
+}
+
+.pic-mon .pic-body {
+  padding-left: 10px;
+}
+
+.pic-mon .pic-body:hover > a {
+  display: inline-block;
+}
+
+.pic-mon .pic-body span {
+  font-size: 14px;
+  color: #91908c;
+}
+
+.pic-mon .pic-body span:hover {
+  color: #f25a29;
+}
+
+.pic-mon .pic-body a {
+  color: #f25a29;
+  display: none;
+  font-size: 14px;
+}
+
+.pic-mon .pic-body a:hover {
+  text-decoration: underline;
+}
+
+.pic-mon .pic-body a:hover + span {
+  color: #f25a29;
+}
+
+.pic-mon .pic-body .check-con {
+  height: 30px;
+  line-height: 30px;
+}
+
+/*右边编辑*/
+.set-pad {
+  padding-left: 12px !important;
+}
+
+.edit-detail {
+  padding: 0px 20px;
+  margin-left: 200px;
+}
+
+.row-check {
+  padding: 0 15px 0 0;
+  width: 36.2069%;
+}
+
+.editable {
+  background-color: white !important;
+}
+
+.clickable {
+  color: #91908c !important;
+}
+
+.detail-top {
+  position: relative;
+  min-height: 230px;
+}
+
+.detail-top span {
+  color: #262626;
+}
+
+.detail-top .pay-all span {
+  font-size: 14px;
+  color: #f25a29;
+}
+
+.detail-top .pay-item {
+  height: 100%;
+  min-height: 42px;
+  line-height: 42px;
+}
+
+.detail-top .pay-item span {
+  font-size: 12px;
+}
+
+.detail-top .pay-item input[type='text'] {
+  height: 30px;
+  width: 40%;
+  /*float: right;*/
+  vertical-align: middle;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  color: #91908c;
+  padding-left: 10px;
+  float: right;
+  margin-top: 6px;
+}
+
+.detail-top .row-count {
+  height: 100%;
+  /*position: relative;*/
+  padding-top: 6px;
+  width: 27.53873%;
+}
+
+.detail-top .row-count p {
+  margin-bottom: 12px;
+  color: #e22c23;
+  font-size: 14px;
+}
+
+.detail-top .row-count p span {
+  color: #e22c23;
+}
+
+.detail-top .row-count button {
+  position: absolute;
+  right: 17.2117%;
+  font-size: 14px;
+  bottom: 10px;
+  border: 1px solid #ea8161;
+  background-color: #ea8161;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.detail-middle h3 {
+  color: #262626;
+  font-size: 14px;
+  line-height: 36px;
+}
+
+.detail-middle .edit-tips label {
+  color: #ccc;
+}
+
+.detail-middle .edit-tips textarea {
+  height: 80px;
+  width: 432px;
+  border: 1px solid #ccc;
+  vertical-align: text-top;
+}
+
+button {
+  cursor: pointer;
+}
+
+.detail-bottom {
+  margin-top: 30px;
+}
+
+.detail-bottom .pay-item, .detail-bottom .row-check p {
+  height: 30px;
+  line-height: 30px;
+  color: #262626;
+  font-size: 12px;
+}
+
+.detail-bottom .row-check p span {
+  color: #e22c23;
+  font-size: 14px;
+}
+
+.detail-bottom .row-check {
+  position: relative;
+  height: 146px;
+}
+
+.detail-bottom .row-check button {
+  position: absolute;
+  left: 0px;
+  font-size: 12px;
+  top: 110px;
+  border: 1px solid #ea8161;
+  background-color: #ea8161;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 3px;
+}
+
+.detail-bottom .pay-type {
+  height: 30px;
+  line-height: 30px;
+}
+
+.detail-bottom .pay-type span {
+  line-height: 20px;
+  color: #f25a29;
+  font-size: 14px;
+  display: inline-block;
+  width: 57px;
+  padding: 0 5px;
+  border: 1px solid #f25a29;
+  position: relative;
+}
+
+.detail-bottom .pay-type span:after {
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  border: 4px solid transparent;
+  border-top-color: #f25a29;
+  top: 50%;
+  right: 5px;
+  margin-top: -3.5px;
+}
+
+.detail-bottom .pay-type .type {
+  width: 57px;
+  position: relative;
+}
+
+.detail-bottom .pay-type .type span {
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.detail-bottom .pay-type ul {
+  position: absolute;
+  z-index: 100;
+  bottom: 25px;
+  width: 57px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-bottom: none;
+  background-color: white;
+}
+
+.detail-bottom .pay-type ul li {
+  width: 100%;
+  padding: 0 5px;
+  line-height: 20px;
+  font-size: 12px;
+  border-top: 1px solid #ccc;
+  color: #262626;
+  cursor: pointer;
+}
+
+.detail-bottom .pay-type ul li:hover {
+  background-color: #f25a29;
+  color: white;
+}
+
+.block {
+  min-height: 80px !important;
+}
+
+.block input[type='text'] {
+  width: 100% !important;
+}
+
+.pic-head, .pic-body, .pay-item, .pay-all, .check-con {
+  position: relative;
+}
+
+.pic-head span, .pic-body span, .pay-item span, .pay-all span, .check-con span {
+  margin-left: 0px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.pic-head label, .pic-body label, .pay-item label, .pay-all label, .check-con label {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  height: 12px;
+  width: 12px;
+  border: 1px solid #f25a29;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.pic-head label img, .pic-body label img, .pay-item label img, .pay-all label img, .check-con label img {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -40%;
+  margin-left: -40%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.pic-head label {
+  top: 1px;
+}
+
+.pic-body label {
+  top: 9px;
+}
+
+.detail-top .pay-item {
+  max-height: 42px;
+}
+
+.detail-top .pay-item span {
+  max-width: 40%;
+  line-height: 14px;
+  margin-top: 5px;
+}
+
+.pay-all label {
+  top: 3px;
+}
+
+.detail-bottom .pay-item label {
+  top: 9px;
+}
+
+.checked {
+  background-color: #f25a29;
+}
+
+input[type='checkbox'] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin-right: 14px;
+}
+
+.types {
+  display: none;
+}
+
+* {
+  font-family: 'Microsoft yahei';
+}
+
+.btm-save {
+  position: fixed;
+  height: 54px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 54px;
+  background-color: #fff;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+
+.btm-save button {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  border: 1px solid #F39D84;
+  background-color: #F39D84;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 3px;
+  margin: 0 6px;
+  outline: transparent;
+}
+
+.btm-save button:hover {
+  border: 1px solid #ea8161;
+  background-color: #ea8161;
+}
+
+.btm-save button:first-child {
+  background-color: white;
+  color: #ea8161;
+}
+
+.btm-save button:first-child:hover {
+  border: 1px solid #F39D84;
+  background-color: #F39D84;
+  color: white;
+}
+
+@media screen and (max-width: 900px) {
+  .row-check {
+    padding: 0 18px 0 0 !important;
+  }
+  .pay-item input[type='text'] {
+    width: 46% !important;
+  }
+  .edit-detail {
+    padding: 8px 0px 0 10px;
+  }
+  .block input[type='text'] {
+    width: 100% !important;
+  }
+}
+
+/*# sourceMappingURL=../maps/oweEdit.css.map */

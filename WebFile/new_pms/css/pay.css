@@ -1,0 +1,120 @@
+table {
+  height: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  overflow-x: scroll;
+}
+
+table tr {
+  height: 36px;
+  border-bottom: 1px solid #eee;
+}
+
+table tr td, table tr th {
+  padding-left: 10px;
+  border-right: 1px solid #eee;
+  text-align: center;
+  color: #b2b2b2;
+}
+
+table tr td p, table tr th p {
+  width: 100%;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 20px;
+}
+
+table .thead {
+  height: 40px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ea8260 !important;
+}
+
+table .thead td {
+  padding: 0;
+  margin: 0;
+  border: none;
+  color: white;
+  padding-left: 10px;
+  font-size: 12px;
+}
+
+.my-table {
+  position: relative;
+  width: 100%;
+}
+
+.left-fixed {
+  overflow-x: scroll;
+  width: 600px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-bottom: 20px;
+}
+
+.left-fixed table {
+  width: 600px !important;
+  max-width: 600px;
+}
+
+.left-fixed table tr:nth-child(2n-1) {
+  background-color: #f5f5f5;
+}
+
+.right-active {
+  padding-bottom: 20px;
+  margin-left: 600px;
+  overflow-x: scroll;
+}
+
+.right-active table {
+  background-color: #f5f5f5;
+}
+
+.right-active table td, .right-active table th {
+  padding-left: 10px;
+  border-right: 1px solid #eee;
+  text-align: center;
+  color: #b2b2b2;
+  width: 100%;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 20px;
+}
+
+.count-total {
+  background-color: #ffeea9 !important;
+  position: absolute;
+  height: 36px;
+  width: 100%;
+  bottom: 0px;
+  z-index: -1;
+}
+
+.count-total p {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 36px;
+  padding-left: 36px;
+}
+
+.count-total p span {
+  color: #d81919;
+}
+
+.count-total .peo-count {
+  margin-left: 20px;
+}
+
+.count-total .mon-count {
+  margin-left: 50px;
+}
+
+/*# sourceMappingURL=../maps/pay.css.map */

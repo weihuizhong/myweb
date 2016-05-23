@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>缴费中心</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/payCenter.css">
+</head>
+<body>
+
+  <div class="qz-ticket-success">
+    <p class="last-p"><span>68</span>张发票已全部打印成功！</p>
+    <button>我知道了(<span class="qz-less-time">5</span>s)</button>
+  </div>
+
+</body>
+<script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+  $(function () {
+    closeWin(5, $('.qz-less-time'))
+    
+  })
+  function closeWin(sec, el) {
+    var timer = setInterval(function () {
+      sec --;
+      if(sec < 0) {
+        clearInterval(timer)
+        alert('关闭窗口')
+        return;
+      }
+      el.html(sec)
+    }, 1000)
+  }
+    
+</script>
+</html>

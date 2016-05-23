@@ -1,0 +1,613 @@
+@mixin set-flex($orient:horizontal, $flow: row) {
+  display: flex;
+  -webkit-box-orient: $orient;
+  flex-flow: $flow;
+}
+
+%set-flex {
+  @include set-flex();
+}
+
+@mixin set-flex-align($justify: flex-start, $align: flex-start) {
+  justify-content: $justify;
+  align-items: $align;
+}
+
+//flex items
+@mixin flex($num:1) {
+  flex: $num;
+}
+
+@mixin flex-self($align: auto) {
+  align-self: $align;
+}
+
+%set-flex {
+  @include flex();
+}
+
+%clearfix:after{
+  display: block;
+  content: "";
+  clear:both;
+}
+
+$f-12: 12px;
+$f-14: 14px;
+$f-16: 16px;
+$f-18: 18px;
+$f-38: 38px;
+$dep-blue: #4392e1;
+$blue: #57a3f1;
+$bg: #f2f2f2;
+$black-bg: #2b3038;
+html {
+  height: 100%;
+  min-height: 740px;
+}
+
+body {
+  font-family: 'Microsoft yahei';
+  /*height: 100%;*/
+  overflow-x: hidden;
+}
+
+body {
+  /*height: 100%;*/
+}
+
+* {
+  letter-spacing: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.qz-wrapper {
+  min-height: 100%;
+  /*@include set-flex($flow: column);*/
+}
+
+.no-width {
+  width: 131px !important;
+  opacity: 1 !important;
+}
+
+.width-66 {
+  width: 197px !important;
+  /*opacity: 0 !important;*/
+}
+
+.margin {
+  margin-left: 209px !important;
+}
+
+.option-sel {
+  background-color: #323b4a !important;
+  i {
+    opacity: 1 !important;
+  }
+}
+
+.badge {
+  padding: 0px 3px;
+  line-height: 14px;
+  font-size: $f-12;
+  background-color: #e87751;
+  font-weight: 500;
+  position: absolute;
+  right: -1px;
+  top: 10px;
+}
+.qz-bell{
+  .badge{
+    right: 5px;
+  }
+}
+
+.qz-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 101;
+  background-color: $blue;
+  @at-root {
+    .qz-logo {
+      width: 197px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      .quanzhong {
+        background-color: $dep-blue;
+        width: 66px;
+        height: 100%;
+        a {
+          display: inline-block;
+          height: 100%;
+          width: 100%;
+          line-height: 50px;
+        }
+      }
+      .qz-title {
+        color: white;
+        width: 131px;
+        font-size: $f-16;
+        span {
+          color: white;
+        }
+      }
+    }
+
+    .qz-user-msg {
+      height: 50px;
+      .user-msg {
+        line-height: 49px;
+        img {
+          width: 32px;
+          max-height: 32px;
+          overflow: hidden;
+        }
+        span {
+          font-size: $f-12;
+          cursor: pointer;
+          color: white;
+          i {
+            color: white;
+          }
+        }
+      }
+      .user-option {
+        height: 50px;
+        line-height: 50px;
+        margin-left: 20px;
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          height: 100%;
+           width: 160px;
+          // overflow: scroll;
+          li {
+            padding: 0;
+            height: 100%;
+            text-align: center;
+            a {
+              position: relative;
+              text-decoration: none;
+              display: inline-block;
+              height: 100%;
+              width: 40px;
+              &:hover {
+                i {
+                  color: #fff;
+                }
+                background-color: #3783d1;
+              }
+            }
+            i {
+              color: #d7ebff;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.qz-border-b {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.qz-container {
+  @extend %clearfix;
+  box-sizing: border-box;
+  padding-top: 50px;
+  background-color: $bg;
+}
+
+.qz-left-fixed {
+  position: fixed;
+  width: 66px;
+  margin-right: 12px;
+  background-color: white;
+  transition: all .6s;
+  opacity: 1;
+  left: 0;
+  z-index: 100;
+  bottom: 0;
+  top:50px;
+
+  @at-root {
+    .option-btn {
+      float: left;
+      width: 66px;
+      height: 100%;
+      background-color: $black-bg;
+      overflow: auto;
+      i {
+        font-size: 26px;
+        color: #fff;
+        font-weight: 200;
+        opacity: .6;
+      }
+      ul {
+        li {
+          box-sizing: border-box;
+          padding-top: 17px;
+          height: 100px;
+          border-bottom: 1px solid #51545a;
+          text-align: center;
+          cursor: pointer;
+          p {
+            margin-top: 8px;
+            margin-bottom: 0;
+            color: #fff;
+            font-size: $f-14;
+          }
+        }
+      }
+    }
+
+    .collpse-left {
+      width: 0;
+      position: absolute;
+      right: 0;
+      @include flex();
+      height: 100%;
+      .clip {
+        width: 24px;
+        overflow: hidden;
+        cursor: pointer;
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        margin-top: -22px;
+      }
+      .arrow-btn {
+        line-height: 44px;
+        text-align: center;
+        width: 44px;
+        height: 44px;
+        background-color: #ddedfc;
+        border-radius: 50%;
+        z-index: 100;
+        &:hover {
+          background-color: $blue;
+        }
+        i {
+          margin-left: -16px;
+          color: white;
+        }
+
+      }
+    }
+    .collpse-right {
+      .clip {
+        left: 0;
+        transform: rotate(180deg);
+        right: auto;
+      }
+    }
+
+    .option-item {
+      float: left;
+      overflow-y: auto;
+      overflow-x: hidden;
+      width: 0px;
+      transition: all .6s;
+      opacity: 0;
+      font-size: 14px;
+      height: 100%;
+      ul {
+        @include flex();
+        width: 100%;
+        height: auto;
+        display: none;
+        text-align: left;
+        text-indent:25px;
+        // overflow: scroll;
+        > li {
+          height: 40px;
+          line-height: 40px;
+          color: #1f1f1f;
+          position: relative;
+          &:hover {
+            background-color: #e6e6e6;
+          }
+        }
+        .item-sel {
+          background-color: #e6e6e6;
+        }
+      }
+      //物业
+      .tenement {
+        .pointer {
+          height: auto;
+        }
+        .pointer-title {
+          color: #808080;
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            border: 5px solid transparent;
+            border-left-color: #808080;
+            top: 15px;
+            left: 10px;
+            width: 10px;
+            height: 10px;
+          }
+        }
+        .pointer-collapse-list {
+          display: block;
+          overflow: hidden;
+          text-indent: 3em;
+        }
+        .pointer-collapse {
+          &:hover{
+            background-color: inherit;
+          }
+          &.pointer-collapse-close {
+            background-color: #fff;
+            .pointer-title {
+              &:after {
+                transition: rotate;
+                transform: rotate(90deg);
+                top: 17px;
+                left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.qz-margin-30 {
+  margin: 0 30px;
+}
+
+.qz-right-active {
+  position: relative;
+  overflow-y: auto;
+  padding-bottom: 60px;
+  margin-left: 72px;
+  @include flex();
+  transition: margin .6s;
+  /*height: 1000px;*/
+  @at-root {
+    .qz-message {
+      h3 {
+        height: 50px;
+        line-height: 50px;
+        font-size: $f-12;
+        color: #6a6a6a;
+        margin: 0;
+        span {
+          color: #6a6a6a;
+
+        }
+      }
+    }
+
+    .qz-char {
+      margin-top: 8px;
+      .date-time {
+        font-size: $f-14;
+        color: #808080;
+      }
+      h2 {
+        height: 20px;
+        line-height: 20px;
+        margin: 0;
+        font-size: $f-18;
+        span, a {
+          @extend .date-time;
+        }
+      }
+      .qz-pic {
+        @extend %clearfix;
+        //ie兼容
+        >div{
+          float: left;
+          width: 50%;
+          height: 100%;
+          .pic-tiao,.pic-huan{
+            height: 100%;
+            >div + div{
+              background-color: #000\0;
+            }
+          }
+        }
+        @include set-flex();
+        background-color: white;
+        height: 340px;
+        padding: 30px 0px;
+        margin-bottom: 12px;
+        .qz-total {
+          padding: 0 20px;
+          @include flex();
+          border-right: 1px solid #ebebeb;
+        }
+        .qz-living {
+          padding: 0 20px;
+          @include flex();
+        }
+      }
+      .qz-msg {
+        @include set-flex();
+        width:100%\9;
+        & > div {
+          padding: 30px 20px;
+          min-height: 250px;
+          height: 250px\0;
+          @include flex();
+          background-color: white;
+          //ie9
+          width:49%\9;
+          float: left \9;
+          &+div {
+            float: right \9;
+          }
+        }
+
+      }
+      @at-root {
+        .qz-quick-msg {
+          margin-right: 10px;
+          .msg-detail {
+            @include set-flex($flow: column);
+            @include set-flex-align(center, center);
+            text-align: center \9;
+            & > div {
+              margin-bottom: 20px;
+              span {
+                color: #6f6f6f;
+              }
+              img {
+                vertical-align: text-bottom;
+              }
+              .qz-num {
+                color: #e87751;
+                margin: 0 8px;
+                font-size: $f-38;
+                small {
+                  font-size: 22px;
+                  color: #e87751;
+                }
+              }
+            }
+            & > div + div {
+              width: 100%;
+              text-align: center;
+              & > span:nth-child(2) {
+                border-left: 1px solid #c4c4c4;
+                border-right: 1px solid #c4c4c4;
+              }
+              span {
+                padding: 0 4%;
+                font-size: $f-14;
+                small {
+                  font-size: $f-14;
+                  color: #ea8362;
+                }
+              }
+            }
+          }
+        }
+
+        .qz-advice {
+          .msg-detail {
+            ul {
+              .no-dule {
+                span, a {
+                  color: #ea5656;
+                  text-decoration: none;
+                }
+                .state {
+                  border: 1px solid #ea5656;
+                  margin-right: 14px;
+                }
+              }
+              li {
+                cursor: pointer;
+                a {
+                  color: #4b4b4b;
+                  font-size: $f-12;
+                  text-decoration: none;
+                }
+                span {
+                  font-size: $f-12;
+                  color: #b2b2b2;
+                }
+                .state {
+                  padding: 0px 4px;
+                  border: 1px solid #b2b2b2;
+                  margin-right: 14px;
+                }
+                height: 30px;
+                line-height: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .qz-btm {
+    width: 100%;
+    position: fixed;
+    height: 30px;
+    line-height: 30px;
+    background-color: #F2F2F2;
+    bottom: 0px;
+    text-align: center;
+    .qz-contact {
+      position: absolute;
+      left: 0;
+    }
+    a {
+      color: #afafaf;
+      font-size: 12px;
+      text-decoration: none;
+    }
+  }
+}
+
+.qz-expend {
+  display: block;
+  font-size: $f-12;
+  padding-left: 18px;
+  background-image: url(../img/pic/menu.png);
+  background-repeat: no-repeat;
+  background-position: 2px center;
+  color: #999;
+  cursor: pointer;
+}
+
+.pub {
+  font-size: $f-12;
+  color: #afafaf;
+  text-align: center;
+}
+
+.nodata {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  top: 20px;
+  background-image: url(../img/icon/nodata1.png);
+  background-repeat: no-repeat;
+  background-size: 150px;
+  background-position: center center;
+  p {
+    position: absolute;
+    height: 20px;
+    right: 0;
+    left: 0;
+    bottom:0;
+    top:0;
+    margin:auto;
+    text-align: center;
+    color:#888;
+  }
+}
+
+.flex {
+  @include set-flex($flow: column);
+  & > div {
+    @include flex();
+  }
+}
+

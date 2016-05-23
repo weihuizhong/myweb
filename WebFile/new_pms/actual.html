@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/tableCommon.css">
+  <link rel="stylesheet" href="css/actual.css">
+  <link rel="stylesheet" type="text/css" href="css/loading.css">
+  <script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/jquery.freezeheader.js"></script>
+  <script type="text/javascript" src="js/loading.js"></script>
+  <script type="text/javascript" src="js/actual.js"></script>
+  <script></script>
+</head>
+<body>
+ <div class="wrapper-table" >
+       <div class="table-title qz-search">
+         <h2>2015年2月(缴费日期或者费用周期) 应收实收欠收报表</h2>
+         <span>费用周期：</span>
+         <input class="qz-date" type="text" id="date" name="date" value="" readonly="" onclick="WdatePicker({dateFmt: 'yyyy-MM-dd'});"> - 
+         <input class="qz-date" type="text" id="date" name="date" value="" readonly="" onclick="WdatePicker({dateFmt: 'yyyy-MM-dd'});">
+         <span class="date-mar">收款日期：</span>
+         <input class="qz-date" type="text" id="date" name="date" value="" readonly="" onclick="WdatePicker({dateFmt: 'yyyy-MM-dd'});"> - 
+         <input class="qz-date" type="text" id="date" name="date" value="" readonly="" onclick="WdatePicker({dateFmt: 'yyyy-MM-dd'});">
+         <button>查询</button>
+       </div>
+       <div class="table-container">
+         <div class="my-table" >
+                <div class="left-fixed">
+                  <table data-resizable-columns-id="demo-table">
+                      <thead>
+                          <tr rowspan="2" class="thead">
+                            <th data-resizable-column-id="a" >组织机构</th>
+                            <th data-resizable-column-id="b" >管理区</th>
+                            <th data-resizable-column-id="c" >房间</th>
+                            <th data-resizable-column-id="d" >收费项目
+                            </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                            <td>654sdddddddddddddd654dd</td>
+                            <td>2dddddddddddddddddddddd</td>
+                            <td>3ddddddddddddd</td>
+                            <td class="owe-list">4ddddd
+                              <button class="col-btn" for-data=".sub-child-1"><span>+</span></button>
+                            </td>
+                          </tr>
+                          <tr class="sub-child-1 qz-sub-child">
+                            <td>654 </td>
+                            <td>2ddddd  </td>
+                            <td> 56</td>
+                            <td>4dd </td>
+                          </tr>
+                          <tr class="be-group-total">
+                            <td >6546546</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                          </tr>
+                          <tr class="group-total">
+                            <td colspan="4">海贵阁(楼栋)小计:</td>
+                          </tr>
+                          <tr>
+                            <td>6546546</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                          </tr>
+                          <tr>
+                            <td>6546546</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                          </tr>
+                          <tr class="fixed-row-sel">
+                            <td colspan="4" rowspan="2">小区小计:345户</p></td>
+                          </tr>
+                          <tr></tr>
+                      </tbody>
+                  </table>
+                </div>
+                <div class="right-active">
+                  <table>
+                     <thead>
+                      <tr class="thead total-thead">
+                        <th class="col-three sort1 sort1-bor" colspan="3" data-resizable-column-id="h">
+                          应收费用
+                        </th>
+                        <th class="col-three sort2 sort2-bor" colspan="3" data-resizable-column-id="s">
+                          实收费用
+                        </th>
+                        <th class="col-three sort3 sort3-bor" colspan="3" data-resizable-column-id="dd">
+                          欠款费用
+                        </th>
+                        <th rowspan="2" colspan="3" data-resizable-column-id="ff">本月收缴率(%)</th>
+                        <th rowspan="2" colspan="3" data-resizable-column-id="gg">累计收缴率(%)</th>
+                      </tr>
+                      <tr class="thead total-thead">
+                        <th class="sort1">本月应收</th>
+                        <th class="sort1">往月应收</th>
+                        <th class="sort1 sort1-bor">应收合计</th>
+                        <th class="sort2">本月实收</th>
+                        <th class="sort2">往月实收</th>
+                        <th class="sort2 sort2-bor">实收合计</th>
+                        <th class="sort3">本月欠款</th>
+                        <th class="sort3">往月欠款</th>
+                        <th class="sort3 sort3-bor">欠款合计</th>
+                      </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                           <td>asd阿西吧f11</td>
+                           <td>asdf12</td>
+                           <td>asdf13</td>
+                           <td>asdf14</td>
+                           <td>asdf15</td>
+                           <td>asdf11</td>
+                           <td>asdf12</td>
+                           <td>asdf13</td>
+                           <td>asdf14</td>
+                           <td colspan="3">asdf15</td>
+
+                           <td colspan="3">asdf13</td>
+
+                         </tr>
+                         <tr class="sub-child-1 qz-sub-child">
+                           <td>阿斯顿发生</td>
+                           <td>asdf12</td>
+                           <td>asdf13</td>
+                           <td>asdf14</td>
+                           <td>asdf15</td>
+                           <td>asdf11</td>
+                           <td>asdf12</td>
+                           <td>asdf13</td>
+                           <td>asdf14</td>
+                           <td colspan="3">asdf15</td>
+
+                           <td colspan="3">asdf13</td>
+                         </tr>
+                         <tr class="be-group-total">
+                           <td>asdf11</td>
+                           <td>asdf12</td>
+                           <td>asdf13</td>
+                           <td>asdf14</td>
+                           <td>asdf15</td>
+                           <td>asdf11</td>
+                           <td>asdf12</td>
+                           <td>asdf13</td>
+                           <td>asdf14</td>
+                           <td colspan="3">asdf15</td>
+
+                           <td colspan="3">asdf13</td>
+
+                         </tr>
+                         <tr class="group-total">
+                           <td>asdf11</td>
+                           <td>asdf12</td>
+                           <td>asdf13</td>
+                           <td>asdf14</td>
+                           <td>asdf15</td>
+                           <td>asdf11</td>
+                           <td>asdf12</td>
+                           <td>asdf13</td>
+                           <td>asdf14</td>
+                           <td colspan="3">asdf15</td>
+
+                           <td colspan="3">asdf13</td>
+
+                         </tr>
+                         <tr>
+                           <td>asdf11</td>
+                           <td>asdf12</td>
+                           <td>asdf13</td>
+                           <td>asdf14</td>
+                           <td>asdf15</td>
+                           <td>asdf11</td>
+                           <td>asdf12</td>
+                           <td>asdf13</td>
+                           <td>asdf14</td>
+                           <td colspan="3">asdf15</td>
+
+                           <td colspan="3">asdf13</td>
+
+                         </tr>
+                         <tr>
+                           <td>asdf11</td>
+                           <td>asdf12</td>
+                           <td>asdf13</td>
+                           <td>asdf14</td>
+                           <td>asdf15</td>
+                           <td>asdf11</td>
+                           <td>asdf12</td>
+                           <td>asdf13</td>
+                           <td>asdf14</td>
+                           <td colspan="3">asdf15</td>
+                           <td colspan="3">asdf13</td>
+                         </tr>
+                         <tr class="qz-sort-count">
+                            <td>276.6</td>
+                            <td>565.3</td>
+                            <td class="sort1-count">565.3</td>
+                            <td>565.3</td>
+                            <td>565.3</td>
+                            <td class="sort2-count">565.3</td>
+                            <td>565.3</td>
+                            <td>565.3</td>
+                            <td class="sort3-count">565.3</td>
+                            <td colspan="3">878.2</td>
+                            <td colspan="3">878.2</td>
+                         </tr>
+                     </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+  </div>
+  <div class="qz-page-nav">
+      <div class="pull-left link"> 
+        <a class="page-prev" href="javascript:void(0)" onclick="urlPage('2');return false;">上一页</a> 
+        <a class="num" href="javascript:void(0)" onclick="urlPage('1');return false;">1</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('2');return false;">2</a><span>3</span>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('4');return false;">4</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('5');return false;">5</a><a class="num" href="javascript:void(0)" onclick="urlPage('6');return false;">6</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('7');return false;">7</a><a class="num" href="javascript:void(0)" onclick="urlPage('8');return false;">8</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('9');return false;">9</a><a class="num" href="javascript:void(0)" onclick="urlPage('10');return false;">10</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('11');return false;">11</a>
+         <a class="page-next" href="javascript:void(0)" onclick="urlPage('4');return false;">下一页</a> 
+         <a class="page-last" href="javascript:void(0)" onclick="urlPage('1282');return false;">尾页</a>共 19228 条记录
+     </div>
+     <div class="pull-left jump">
+        <form method="get" action="/qz/index.php?s=/Home/Payment/index.html" data-nav="#Payment/index" id="mainPageForm">
+            <input type="hidden" name="p" value="3">
+            第<input type="text" name="p" class="txt28" id="jumpPage" onfocus="this.value=''" value="3">页
+           <a href="javascript:void(0)" class="btn_jump page_btm_jump">跳 转</a>
+       </form>                <script>
+            $(function(){
+                $('.page_btm_jump').click(function(){
+                    pageJump();
+                    return false;
+                });
+                $('#mainPageForm').submit(function(){
+                    pageJump();
+                    return false;
+                });
+            });
+                function pageJump(){
+                    var url  = $("#mainPageForm").attr('action');
+                    var str = $('#mainPageForm').serialize();
+                    if (url.indexOf('?') >= 0) {
+                        url += '&' + str;
+                    } else {
+                        url += '?' + str;
+                    }
+                    var data_nav = $("#mainPageForm").attr('data-nav');
+                    conGoToUrlFun(data_nav, url);
+                }
+                function urlPage(p){
+                   $('#jumpPage').val(p);
+                    pageJump();
+                }
+        </script> 
+     </div>
+  </div>
+</body>
+</html>

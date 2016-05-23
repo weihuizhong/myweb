@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>房屋架构</title>
+	<script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" href="css/architecture.css">
+</head>
+<body>
+<div id="arch" class="arch" style="min-height: 675px">
+	<header class="arch-title">
+		<h2>房屋架构</h2>
+	</header>
+	<!--按钮组-->
+	<div class="arch-btn-bar">
+		<ul class="import-export btn-group">
+			<li><a href="###">导入房屋结构</a><i class="icon-tri-blue-right"></i></li>
+			<li><a href="###">导出房屋结构</a><i class="icon-tri-blue-right"></i></li>
+		</ul>
+		<ul class="and-change btn-group">
+			<li class="disabled-btn arch-btn change-btn"><a href="###">修改</a></li>
+			<li class="arch-btn add-btn"><a href="###">增加</a></li>
+		</ul>
+	</div>
+
+	<!--正文-->
+	<div class="arch-content">
+		<!--左侧栏搜索，树状图-->
+		<div class="arch-aside">
+			<!--搜索-->
+			<div class="arch-search">
+				<label class="icon-search" for="arch-search-user"></label><input id="arch-search-user" type="text">
+			</div>
+			<!--树状图-->
+			<div class="arch-map">
+
+			</div>
+		</div>
+		<!--表格-->
+		<div class="arch-table-wrap">
+			<form id="iframeForm" class="arch-table" action="###">
+				<div id="table-container" class="table-container">
+					<div id="arch-left-table" class="left-fixed">
+						<table id="arch-left-table-header" class="arch-table-header">
+							<thead>
+							<tr class="thead">
+								<th>小区</th>
+								<th>楼栋</th>
+								<th>单元</th>
+								<th>房号</th>
+								<th>电表</th>
+								<th>手表</th>
+							</tr>
+							</thead>
+						</table>
+						<table id="arch-left-table-body" class="arch-table-body">
+							<thead>
+							<tr class="thead">
+								<th>小区</th>
+								<th>楼栋</th>
+								<th>单元</th>
+								<th>房号</th>
+								<th>电表</th>
+								<th>手表</th>
+							</tr>
+							</thead>
+							<tbody id="arch-left-tbody">
+							<tr class="no-content">
+								<td><input disabled class="input-small" type="text" value=""></td>
+								<td><input disabled class="input-small" type="text" value=""></td>
+								<td><input disabled class="input-small" type="text" value=""></td>
+								<td><input disabled class="input-small" type="text" value=""></td>
+								<td class="js-add"><input disabled class="input-small" type="text" value=""><i
+										class="icon-tri-add-defalut"></i></td>
+								<td class="js-add"><input disabled class="input-small" type="text" value=""><i
+										class="icon-tri-add-defalut"></i>
+								</td>
+							</tr>
+							<!--获取模板-->
+							</tbody>
+							<script type="text/x-handlebars-template" id="add-left-template">
+								<tr class="change add">
+									<td><input class="input-small" type="text" value=""></td>
+									<td><input class="input-small" type="text" value=""></td>
+									<td><input class="input-small" type="text" value=""></td>
+									<td><input class="input-small" type="text" value=""></td>
+									<td class="js-add"><input disabled class="input-small" type="text" value=""><i
+											class="icon-tri-add-defalut"></i></td>
+									<td class="js-add"><input disabled class="input-small" type="text" value=""><i
+											class="icon-tri-add-defalut"></i>
+									</td>
+								</tr>
+							</script>
+						</table>
+					</div>
+					<div id="arch-right-table" class="right-active">
+						<table id="arch-right-table-header" class="arch-table-header">
+							<thead>
+							<tr class="thead">
+								<th class="">业主姓名</th>
+								<th>联系电话</th>
+								<th>银行名称</th>
+								<th>开户名</th>
+								<th>银行账号</th>
+								<th>账号类型</th>
+								<th>房屋状态</th>
+								<th>房屋类型</th>
+								<th class="arch-tray-th">是否与银行托盘<br/>（是/否）</th>
+								<th class="arch-charge-th">是否参与收费<br/>（是/否）</th>
+								<th>建筑面积</th>
+								<th>所属楼层</th>
+							</tr>
+							</thead>
+						</table>
+						<table id="arch-right-table-body" class="arch-table-body">
+							<thead>
+							<tr class="thead">
+								<th class="">业主姓名</th>
+								<th>发票名称</th>
+								<th>联系电话</th>
+								<th>银行名称</th>
+								<th>开户名</th>
+								<th>银行账号</th>
+								<th>账号类型</th>
+								<th>房屋状态</th>
+								<th>房屋类型</th>
+								<th class="arch-tray-th">是否与银行托盘<br/>（是/否）</th>
+								<th class="arch-charge-th">是否参与收费<br/>（是/否）</th>
+								<th>建筑面积</th>
+								<th>所属楼层</th>
+							</tr>
+							</thead>
+							<tbody id="arch-right-tbody">
+							<tr class="no-content">
+								<td><input disabled class="input-small" type="text" value=""></td>
+								<td><input disabled class="input-small" type="text" value=""></td>
+								<td><input disabled class="input-small" type="text" value=""></td>
+								<td><input disabled class="input-small" type="text" value=""></td>
+								<td><input disabled class="input-small" type="text" value=""></td>
+								<td><input disabled class="input-small" type="text" value="">
+								</td>
+								<td>
+									<input class="hidden-region" disabled hidden name="zh_type[]" type="text" value="0">
+									<input disabled class="input-small y-select-value" type="text"
+									       value="">
+									<div class="hidden y-select">
+										<div class="y-select-value">公司<i class="icon-tri-white-right"></i></div>
+										<ul class="y-option-list">
+											<li class="y-option-item" data-value='0'>私人</li>
+											<li class="y-option-item" data-value='1'>公司</li>
+										</ul>
+									</div>
+								</td>
+								<td>
+									<input class="hidden-region" disabled hidden name="zh_type[]" type="text" value="0">
+									<input class="input-small y-select-value" disabled type="text"
+									       value="">
+									<div class="hidden y-select">
+										<div class="y-select-value">自住<i class="icon-tri-white-right"></i></div>
+										<ul class="y-option-list">
+											<li class="y-option-item" data-value='0'>出租</li>
+											<li class="y-option-item" data-value='1'>出售</li>
+											<li class="y-option-item" data-value='2'>少住</li>
+											<li class="y-option-item" data-value='3'>空置</li>
+										</ul>
+									</div>
+								</td>
+								<td>
+									<input class="hidden-region" disabled hidden name="zh_type[]" type="text" value="0">
+									<input class="input-small y-select-value" disabled type="text"
+									       value="">
+									<div class="hidden y-select house-type">
+										<div class="y-select-value">三房两厅<i class="icon-tri-white-right"></i></div>
+										<ul class="y-option-list">
+											<li class="y-option-item" data-value="0">一房一厅</li>
+											<li class="y-option-item" data-value="1">两房一厅</li>
+											<li class="y-option-item" data-value="2">三房一厅</li>
+											<li class="y-option-item" data-value="3">四房一厅</li>
+											<li class="y-option-item" data-value="4">四房两厅</li>
+										</ul>
+									</div>
+								</td>
+								<td class="arch-tray-td">
+									<input class="hidden-region" disabled hidden name="zh_type[]" type="text" value="0">
+									<input class="input-small y-select-value" disabled type="text"
+									       value="">
+									<div class="hidden y-select">
+										<div class="y-select-value">是<i class="icon-tri-white-right"></i></div>
+										<ul class="y-option-list">
+											<li class="y-option-item" data-value='0'>是</li>
+											<li class="y-option-item" data-value='1'>否</li>
+										</ul>
+									</div>
+								</td>
+								<td class="arch-charge-td">
+									<input class="hidden-region" disabled hidden name="zh_type[]" type="text" value="0">
+									<input class="input-small y-select-value" disabled type="text"
+									       value="">
+									<div class="hidden y-select">
+										<div class="y-select-value">是<i class="icon-tri-white-right"></i></div>
+										<ul class="y-option-list">
+											<li class="y-option-item" data-value='0'>是</li>
+											<li class="y-option-item" data-value='1'>否</li>
+										</ul>
+									</div>
+								</td>
+								<td><input class="input-small input-disabled" disabled type="text" value="">
+								</td>
+								<td><input class="input-small input-disabled" disabled type="text" value=""></td>
+							</tr>
+							</tr>
+							</tbody>
+							<script type="text/x-handlebars-template" id="add-right-template">
+								<tr class="change add">
+									<td><input disabled class="input-small" type="text" value=""></td>
+									<td><input disabled class="input-small" type="text" value=""></td>
+									<td><input disabled class="input-small" type="text" value=""></td>
+									<td><input disabled class="input-small" type="text" value=""></td>
+									<td><input disabled class="input-small" type="text" value="">
+									</td>
+									<td>
+										<input disabled class="input-small y-select-value" type="text"
+										       value="公司">
+										<div class="hidden y-select">
+											<div class="y-select-value">公司<i class="icon-tri-white-right"></i>
+											</div>
+											<ul class="y-option-list">
+												<li class="y-option-item">私人</li>
+											</ul>
+										</div>
+									</td>
+									<td>
+										<input class="input-small y-select-value" disabled type="text"
+										       value="自住">
+										<div class="hidden y-select">
+											<div class="y-select-value">自住<i class="icon-tri-white-right"></i>
+											</div>
+											<ul class="y-option-list">
+												<li class="y-option-item">出租</li>
+												<li class="y-option-item">出售</li>
+												<li class="y-option-item">少住</li>
+												<li class="y-option-item">空置</li>
+											</ul>
+										</div>
+									</td>
+									<td>
+										<input class="input-small y-select-value" disabled type="text"
+										       value="三房两厅">
+										<div class="hidden y-select house-type">
+											<div class="y-select-value">三房两厅<i class="icon-tri-white-right"></i>
+											</div>
+											<ul class="y-option-list">
+												<li class="y-option-item">两房一厅</li>
+												<li class="y-option-item">一房一厅</li>
+												<li class="y-option-item">四房一厅</li>
+												<li class="y-option-item">四房两厅</li>
+											</ul>
+										</div>
+									</td>
+									<td class="arch-tray-td">
+										<input class="input-small y-select-value" disabled type="text"
+										       value="是">
+										<div class="hidden y-select">
+											<div class="y-select-value">是<i class="icon-tri-white-right"></i>
+											</div>
+											<ul class="y-option-list">
+												<li class="y-option-item">否</li>
+											</ul>
+										</div>
+									</td>
+									<td class="arch-charge-td">
+										<input class="input-small y-select-value" disabled type="text"
+										       value="是">
+										<div class="hidden y-select">
+											<div class="y-select-value">是<i class="icon-tri-white-right"></i>
+											</div>
+											<ul class="y-option-list">
+												<li class="y-option-item">否</li>
+											</ul>
+										</div>
+									</td>
+									<td><input class="input-small input-disabled" disabled type="text"
+									           value="100㎡">
+									</td>
+									<td><input class="input-small input-disabled" disabled type="text"
+									           value="5F">
+									</td>
+								</tr>
+							</script>
+						</table>
+					</div>
+				</div>
+			</form>
+			<div id="scroll-y" class="scroll-y">
+				<div id="kong-div" class="kong-div"></div>
+				<div id="scroll-y-bar" class="scroll-y-bar"></div>
+			</div>
+			<div class="arch-footer">
+				<div class="page-nav">
+					<div class="pull-left link"><span>1</span><a class="num" href="javascript:void(0)"
+					                                             onclick="urlPage('2');return false;">2</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('3');return false;">3</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('4');return false;">4</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('5');return false;">5</a><a
+							class="num" href="javascript:void(0)" onclick="urlPage('6');return false;">6</a> <a
+							class="page-next" href="javascript:void(0)" onclick="urlPage('2');return false;">下一页</a> <a
+							class="page-last" href="javascript:void(0)" onclick="urlPage('610');return false;">尾页</a>
+					</div>
+					共 6093 条记录
+					<div class="pull-left jump">
+						<form method="get" action="/qzsaas/index.php?s=/Home/House/index.html" data-nav="#House/index"
+						      id="mainPageForm">
+
+							第<input type="text" name="p" class="txt28" id="jumpPage" onfocus="this.value=''" value="1">页
+							<a href="javascript:void(0)" class="btn_jump page_btm_jump">跳 转</a>
+						</form>
+						<script>
+							$(function () {
+								$('.page_btm_jump').click(function () {
+									pageJump();
+									return false;
+								});
+								$('#mainPageForm').submit(function () {
+									pageJump();
+									return false;
+								});
+							});
+							function pageJump() {
+								var url = $("#mainPageForm").attr('action');
+								var str = $('#mainPageForm').serialize();
+								if (url.indexOf('?') >= 0) {
+									url += '&' + str;
+								} else {
+									url += '?' + str;
+								}
+								var data_nav = $("#mainPageForm").attr('data-nav');
+								conGoToUrlFun(data_nav, url);
+							}
+							function urlPage(p) {
+								$('#jumpPage').val(p);
+								pageJump();
+							}
+						</script>
+					</div>
+				</div>
+
+				<!--保存按钮-->
+				<ul class="btn-group save-cancel">
+					<li class="save-tip opacity">保存成功</li>
+					<li class="arch-btn arch-save"><a href="###">保存</a></li>
+					<li class="arch-btn arch-cancel"><a href="###">取消</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	function initHtml() {
+
+		function resize(argument) {
+			var myheight = $(window).height();
+			myheight < 300 ? 300 : '';
+			$('#arch').height(myheight - 110 + 'px');
+		}
+
+		resize();
+
+		var archTable = {
+			wrap: $('.arch-table-wrap'),
+			table: $('#iframeForm'),
+			rTable: $('#arch-right-table'),
+			lTable: $('#arch-left-table'),
+			rHeader: $('#arch-right-table-header'),
+			lHeader: $('#arch-left-table-header'),
+			rBody: $('#arch-right-table-body'),
+			lBody: $('#arch-left-table-body'),
+			rTbody: $('#arch-right-tbody'),
+			lTbody: $('#arch-left-tbody'),
+			lTpl: $('#add-left-template').html(),
+			rTpl: $('#add-right-template').html(),
+			scroll: {
+				container: $('#scroll-y'),
+				bar: $('.scroll-y-bar'),
+				barOffsetLeft: function () {
+					return this.bar.offset().left;
+				},
+				barPositionLeft: function () {
+					return this.bar.position().left;
+				},
+				kongDiv: $('#kong-div')
+			},
+			//设置table的高度ie与火狐
+			initTableHeight:function(){
+				var arch = $('#arch');
+				var height = arch.height()-$('.arch-title').height()-$('.arch-btn-bar').outerHeight();
+				this.table.height(height-90);
+				$('.arch-aside').height(height);
+			},
+			//设置marign-left
+			initRTableML: function () {
+				this.rTable.css('margin-left', this.lTable.outerWidth());
+			},
+			initTableWidth: function () {
+				this.rHeader.width(this.rBody.outerWidth());
+				this.lHeader.width(this.lBody.outerWidth());
+			},
+			initTableHeader: function () {
+				function set(header, body) {
+					for (var i = 0; i < header.length; i++) {
+						header.eq(i).width(body.eq(i).width());
+					}
+				}
+
+				set(this.rHeader.find('th'), this.rBody.find('th'));
+				set(this.lHeader.find('th'), this.lBody.find('th'));
+			},
+			//table固定头部
+			fixedHeader: function () {
+				var rHeader = this.rHeader,
+						lHeader = this.lHeader,
+						table = this.table,
+						top = '';
+				this.table.scroll(function () {
+					top = table.scrollTop() - 1;
+					rHeader.css('top', top);
+					lHeader.css('top', top);
+				});
+			},
+			//设置滚动条
+			initScrollBar: function () {
+				var scroll = this.scroll;
+				var scrollWidth = scroll.bar.width(),
+						winWidth = this.rTable.width(),
+						scrollContainerWidth = this.table.width(),//整个滚动条容器的宽，而不是只有左边
+						tableWidth = this.rBody.width(),
+						barWidth = winWidth * winWidth / tableWidth, //因为只要一半
+						ratio = barWidth / winWidth,
+						bar = scroll.bar,
+						leftOffset = '',
+						leftPosition = this.lTable.width(),
+						rTable = this.rTable,
+						scrollLeft = scroll.container.offset().left;
+				//设置滚动条宽度
+				bar.width(barWidth);
+				bar.css('left', leftPosition);
+				scroll.kongDiv.width(leftPosition);
+
+				bar.off('mousedown');
+				bar.mousedown(function (e) {
+					leftOffset = scroll.barOffsetLeft();
+					var startX = e.clientX - leftOffset;
+					console.log(startX);
+					$(document).on('mousemove', function (e) {
+						var moveX = e.clientX - scrollLeft - startX;
+						if (moveX <= leftPosition) {
+							moveX = leftPosition;
+						}
+						if (moveX + barWidth >= scrollContainerWidth) {
+							moveX = scrollContainerWidth - barWidth;
+						}
+						rTable.scrollLeft((moveX - leftPosition) / ratio);
+						bar.css('left', moveX);
+					});
+					return false;
+				});
+
+				$(document).off('mouseup');
+				$(document).mouseup(function () {
+					$(document).off('mousemove');
+					return false;
+				});
+			},
+			//设置滚动条高度
+			setScrollBarTop: function () {
+				console.log(this.rBody.height(), this.table.height());
+				if (this.rBody.height() < this.table.height()) {
+					this.scroll.container.css('top', this.rBody.height()+1)
+				} else {
+					this.scroll.container.css('top', this.table.height()+1)
+				}
+			},
+			//表格经过
+			trHover: function () {
+				var index = null;
+				var rightTr = this.rTbody.find('tr');
+				var leftTr = this.lTbody.find('tr');
+
+				function lEnter() {
+					$(this).addClass('row-sel');
+					index = $(this).index();
+					rightTr.eq(index).addClass('row-sel');
+					return false;
+				}
+
+				function lLever() {
+					$(this).removeClass('row-sel');
+					rightTr.eq(index).removeClass('row-sel');
+					return false;
+				}
+
+				function rEnter() {
+					$(this).addClass('row-sel');
+					index = $(this).index();
+					leftTr.eq(index).addClass('row-sel');
+					return false;
+				}
+
+				function rLever() {
+					$(this).removeClass('row-sel');
+					leftTr.eq(index).removeClass('row-sel');
+					return false;
+				}
+
+				this.lTbody.undelegate('tr');
+				this.rTbody.undelegate('tr');
+
+				this.lTbody.delegate('tr', 'mouseenter', lEnter);
+				this.lTbody.delegate('tr', 'mouseleave', lLever);
+				this.rTbody.delegate('tr', 'mouseenter', rEnter);
+				this.rTbody.delegate('tr', 'mouseleave', rLever);
+
+				this.lTbody.delegate('tr', 'click', function () {
+					if (!$(this).hasClass('change')) {
+						$(this).addClass('active').siblings().removeClass('active');
+						index = $(this).index();
+						rightTr.eq(index).addClass('active').siblings().removeClass('active');
+						//可编辑
+						$('.change-btn').removeClass('disabled-btn');
+					}
+					return false;
+				});
+				this.rTbody.delegate('tr', 'click', function () {
+					if (!$(this).hasClass('change')) {
+						$(this).addClass('active').siblings().removeClass('active');
+						index = $(this).index();
+						leftTr.eq(index).addClass('active').siblings().removeClass('active');
+						//可编辑
+						$('.change-btn').removeClass('disabled-btn');
+					}
+					return false;
+				});
+			},
+			addTr: function () {
+				//获取模块
+				this.lTbody.prepend(this.lTpl);
+				this.rTbody.prepend(this.rTpl);
+				var change = this.table.find('.change');
+				change.find('input[disabled]').not('.input-disabled').removeAttr('disabled');
+				change.find('input.y-select-value').addClass('hidden');
+				change.find('.y-select').removeClass('hidden');
+
+				//重置
+				andWE();
+				selectOperation();
+				archTable.trHover();
+				this.tdClick();
+				archTable.setScrollBarTop();
+			},
+			tdClick: function () {
+				$('.change td').click(function () {
+					$(this).find('input').focus();
+				});
+			}
+		};
+		setTimeout(function () {
+			archTable.initTableHeight();
+			archTable.initTableHeader();
+			archTable.initTableWidth();
+			archTable.fixedHeader();
+			archTable.initScrollBar();
+			archTable.setScrollBarTop();
+			archTable.trHover();
+			archTable.initRTableML();
+			archTable.tdClick();
+			archTable.wrap.css('opacity', 1);
+		}, 500);
+
+		$(window).resize(function () {
+			archTable.initScrollBar();
+			resize();
+		});
+
+		//修改水电
+		function andWE() {
+			//添加按钮
+			$('.js-add i').click(function () {
+				$(this).parents('.js-add').addClass('active').siblings().removeClass('active');
+				return false;
+			});
+		}
+
+		andWE();
+
+		//自定义select
+		function selectOperation() {
+			var selectObj = $('.y-select');
+			var selectList = selectObj.find('.y-option-list');
+
+			//select操作
+			selectObj.click(function () {
+				$('.y-select').not($(this)).find('.y-option-list').hide();
+				$(this).find('.y-option-list').show();
+				return false;
+			});
+
+			//select选中
+			selectList.undelegate('.y-option-item', 'click');
+			selectList.delegate('.y-option-item', 'click', function () {
+				var td = $(this).parents('td');
+				var obj = td.find('.y-select-value');
+
+				var value = obj.eq(1).text();
+				obj.eq(0).val($(this).text()); //隐藏的input
+				obj.eq(1).html($(this).text() + '<i class="icon-tri-white-right"></i>'); //option
+
+				td.find('.hidden-region').val($(this).attr('data-value'));//赋值隐藏域
+
+				$('.y-option-list').hide();
+				return false;
+			});
+		}
+
+		selectOperation();
+
+		//点击修改
+		$('.change-btn').click(function () {
+			$('tr.active').addClass('change').removeClass('active');
+			$('tr.change input[disabled]').not('.input-disabled').removeAttr('disabled');
+			$('tr.change input.y-select-value').addClass('hidden');
+			$('tr.change .y-select').removeClass('hidden');
+		});
+
+		//增加
+		$('.add-btn').click(function () {
+			archTable.addTr();
+		});
+
+		//移除改变标记
+		function removeChange() {
+			var change = $('tr.change');
+			change.find('input').not('.input-disabled').attr('disabled', 'disabled');
+			change.find('input.y-select-value').removeClass('hidden');
+			change.find('.y-select').addClass('hidden');
+			change.removeClass('change');
+		}
+
+		//保存
+		$('.arch-save').click(function () {
+			removeChange();
+			$('.add').removeClass('add');
+			$('form').submit();
+			$('.save-tip').css('opacity', 1);
+			setTimeout(function () {
+				$('.save-tip').css('opacity', 0);
+			}, 1000);
+		});
+
+		//取消
+		$('.arch-cancel').click(function () {
+			var change = $('.change');
+			removeChange();
+			$('.add').remove();
+			if (change.length > 0) {
+				$('form')[0].reset();
+			}
+
+			//重置自定义select
+			//重置
+			archTable.setScrollBarTop();
+		});
+
+
+		$(document).click(function (e) {
+			$('.js-add').removeClass('active');
+			$('.y-option-list').hide();
+			$('.change-btn').addClass('disabled-btn'); //不可编辑
+			$('.left-fixed tbody tr').removeClass('active');
+			$('.right-active tbody tr').removeClass('active');
+		});
+	}
+
+	//控制行数
+
+	initHtml();
+</script>
+</body>
+</html>

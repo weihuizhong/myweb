@@ -1,0 +1,316 @@
+@charset "utf-8";
+
+$borderColor: #d9d9d9;
+$defaultColor: #333333;
+%clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+input::-ms-clear, input::-ms-reveal{
+  display: none;
+}
+%smallInput{
+  width: 57px;
+  height: 26px;
+}
+.personal-center{
+	font-size: 14px; 
+	padding-bottom: 60px;
+}
+.personal-setting {
+  padding: 0 30px;
+  height: 100%;
+  min-width: 780px;
+  font-family: "Microsoft Yahei";
+  color: $defaultColor;
+  overflow: hidden;
+
+  //设置基本样式
+  .btn-group {
+    @extend %clearfix;
+
+    li {
+      float: left;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  li, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  input {
+    color: $defaultColor;
+  }
+  //通用按钮
+  .pb-btn {
+    padding: 0 20px 0 20px;
+    text-align: center;
+    line-height: 28px;
+    margin-right: 12px;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  .input-area {
+    label {
+      width: 126px;
+      display: inline-block;
+      text-align: right;
+      margin-right: 10px;
+      font-weight: normal;
+      color: #666666;
+    }
+    input,select{
+    	height: 26px;
+    	border: 1px solid $borderColor;
+    	color: #666;
+    	padding:0;
+    }
+    margin-bottom: 5px;
+  }
+
+  .person-code{
+  	overflow: hidden;
+  	p{
+  		span{
+  			color:#b2b2b2;
+  			display: inline-block;
+  			padding-right: 16px;
+  			position: relative;
+  			cursor: pointer;
+  			&:after{
+  				content:'';
+  				height: 0;
+  				width: 0;
+  				border:5px solid transparent;
+				border-top-color: #808080;
+				position: absolute;
+				right: 2px;
+				top:50%;
+				margin-top: -3px;
+  			}
+  		}
+  		.expend-setting{
+  			&:after{
+				border-left-color: #808080;
+				border-top-color: transparent;
+				margin-top: -5px;
+  			}
+  		}
+  	}
+  	.input-area{
+  		position: relative;
+  		width: 340px;
+  		input{
+  			width: 200px;
+  		}
+  		.input-eyes{
+			display: none;
+			width: 14px;
+			height: 12px;
+			cursor: pointer;
+			position: absolute;
+			right: 8px;
+			top:50%;
+			margin-top: -6px;
+			z-index: 10;
+			background-image: url(../img/payCenter/eyes1.png);
+			background-repeat: no-repeat;
+  		}
+  		.dis-eyes{
+  			background-image: url(../img/payCenter/eyes.png) !important;
+  		}
+  	}
+  }
+  .company-setting{
+  	.input-area{
+  		input{
+  			width: 275px;
+  		}
+  	}
+  }
+  .ticket-setting{
+  	.input-area{
+  		input,select{
+  			width: 164px;
+  		}
+  	}
+  }
+  //打印发票，费用
+  @at-root {
+    .ticket-setting, .person-cost {
+      @extend %clearfix;
+      .code-input {
+        float: left;
+		li{
+			height: 26px;
+			line-height: 26px;
+			input{
+				margin:0;
+				vertical-align: middle;
+			}
+		}
+      }
+    }
+  }
+
+  //费用
+  @at-root {
+    .person-cost {
+      .code-input {
+        margin-left: 50px;
+      }
+      div.code-input{
+      	input{
+      		width: 74px;
+      		border:1px solid $borderColor;
+      		padding:0;
+      		height: 26px;
+      	}
+      }
+      ul.code-input{
+      	label {
+	      	position: relative;
+	      	padding-left: 20px;
+      		&:before{
+      		  content:"";
+	      	 position: absolute;
+	      	 left: 0;
+	      	 top: 7px;
+	      	 width: 12px;
+	      	 height: 12px;
+	      	  border: 1px solid #B5B5B5;
+	      	  margin: 0 auto;
+	      	}
+      	}
+
+		input[type=checkbox] {
+	      display: none;
+	      &:checked + label {
+	        &:after {
+	        	content:"";
+	      	    display: block;
+	      	    position: absolute;
+	      	    left: 0;
+	      	    top: 7px;
+	      	    width: 12px;
+	      	    height: 12px;
+	       		background-image: url(../img/icon/icon-checked.png) !important;
+	        	background-color: transparent;
+	        }
+	      }
+	    }
+      }
+      label {
+        font-weight: normal;
+        color: #666;
+      }
+    }
+  }
+
+  //管理
+  @at-root {
+    .person-message{
+      .code-input{
+        margin-left: 50px;
+        color:#666;
+        input{
+        	border:1px solid $borderColor;
+        	padding:0;
+        }
+      }
+    }
+  }
+
+  //到期提醒
+  @at-root {
+    .expire-remind {
+      color: #666;
+
+      input{
+        width: 54px;
+        height: 26px;
+        margin: 0 10px;
+        padding: 0 3px;
+        text-align: center;
+      }
+    }
+  }
+
+  @at-root {
+    .person-message{
+      input{
+        width: 54px;
+        height: 26px;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  //标题 按钮
+  @at-root {
+    //标题
+    .qz-person-header {
+      h2 {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 74px;
+        margin: 0;
+        text-align: left;
+        border-bottom: 1px solid $borderColor;
+      }
+    }
+  }
+  @at-root {
+  	.person-btn-group{
+  		margin-top: 30px;
+  		button{
+  			padding: 6px 22px;
+  			background-color: #e87751;
+  			color:white;
+  			border:none;
+  			border-radius: 3px;
+  			margin-right: 10px;
+  			outline: none;
+  			&:nth-child(2){
+  				border: 1px solid #e87751;
+  				background-color: white;
+  				color: #e87751;
+  			}
+  		}
+  	}
+  	.setting-btn-area{
+		margin-left: 30px;
+		margin-top: 60px;
+		button{
+			padding: 6px 22px;
+			background-color: #bfbfbf;
+			color:white;
+			border:none;
+			border-radius: 3px;
+  			outline: none;
+		}
+		.save-btn-active{
+			background-color: #e87751;
+		}
+  	}
+  }
+}

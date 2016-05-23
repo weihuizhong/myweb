@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>全众网络</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+  <div class="header"> 
+    <div class="container">
+      <div class="logo">
+        <img src="img/index/logo.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
+      <div class="con-logo">
+        <img src="img/icon/logo.png" alt="">
+      </div>
+      <div class="con-word">
+        <h1>全众云物业欢迎您！</h1>
+      </div>
+      <div class="con-dir">
+        <p>小主，恭候您多时了！</p>
+        <p>让我带您设置一个更贴心的系统</p>
+      </div>
+      <div class="con-options">
+        <button id="go" class="go">进入向导</button>
+        <button id="next">下次吧</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  $('#go').on('click', function () {
+    window.location.href = 'base.html'
+  })
+  $('#next').on('click', function () {
+    window.location.href = 'http://betapms.zh28.com/index.php?s=/Home/Public/login.html'
+  })
+</script>
+</html>

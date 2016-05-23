@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/tableCommon.css">
+  <script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/jquery.freezeheader.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $("table").freezeHeader();
+      function enter(el,tr) {
+        el.addClass('row-sel').siblings('tr').removeClass('row-sel');
+        var index = el.index();
+      }
+      $('body').delegate('tbody tr', 'click', function () {
+        enter($(this),'')
+      })
+    })
+  </script>
+  <style>
+    tbody tr:hover{
+      background-color: #ffeea9 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper-table">
+       <div class="table-title">
+         <h2>2015年04月-2015年12月按项目收款情况</h2>
+         <span>费用周期：</span>
+         <input class="qz-date" type="text" id="date" name="date" value="" readonly="" onclick="WdatePicker({dateFmt: 'yyyy-MM-dd'});"> - 
+         <input class="qz-date" type="text" id="date" name="date" value="" readonly="" onclick="WdatePicker({dateFmt: 'yyyy-MM-dd'});">
+         <button>查询</button>
+       </div>
+   <div class="my-table" >
+       <div class="table-container">
+         <table>
+             <thead>
+                 <tr class="thead">
+                   <th >序号</th>
+                   <th>收费项目</th>
+                   <th>应收金额</th>
+                   <th>实收金额</th>
+                   <th>欠收金额</th>
+                   <th>收款率(%)</th>
+                   <th>现金</th>
+                   <th>托收</th>
+                   <th>转账</th>
+                   <th>预付</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                   <td>654 </td>
+                   <td>2ddddd  </td>
+                   <td> 56</td>
+                   <td>4dd </td>
+                   <td>5d </td>
+                   <td>2 </td>
+                   <td>3dd </td>
+                   <td>4dddd </td>
+                   <td>5ddd</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                   <td>2ddd</td>
+                   <td>3ddd</td>
+                   <td>4dd</td>
+                   <td>5d</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                   <td>2dd</td>
+                   <td>3dd</td>
+                   <td>4ddd</td>
+                   <td>5dd</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                   <td>2dd</td>
+                   <td>3d</td>
+                   <td>4dddd</td>
+                   <td>5dd</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                   <td>2dddd</td>
+                   <td>3ddd</td>
+                   <td>4ddd</td>
+                   <td>5ddddd</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                   <td>2ddddd</td>
+                   <td>3ddd</td>
+                   <td>4ddd</td>
+                   <td>5dd</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                   <td>2ddddd</td>
+                   <td>3d</td>
+                   <td>4</td>
+                   <td>5dd</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                   <td>2dddd</td>
+                   <td>3ddddd</td>
+                   <td>4d</td>
+                   <td>5dddd</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                   <td>2ddd</td>
+                   <td>3dddd</td>
+                   <td>4dddd</td>
+                   <td>5dddddd</td>
+                 </tr>
+                 <tr>
+                   <td>6546546</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+                   <td>6</td>
+                   <td>2ddddd</td>
+                   <td>3dd</td>
+                   <td>4ddd</td>
+                   <td>5ddd</td>
+                 </tr>
+                 <tr class="total-count">
+                   <td class="total" colspan="2">上林苑小区合计：</td>
+                   <td>300</td>
+                   <td>4999</td>
+                   <td>888</td>
+                   <td>9999</td>
+                   <td>555</td>
+                   <td>377</td>
+                   <td>999</td>
+                   <td>234</td>
+                 </tr>
+             </tbody>
+         </table>
+       </div>
+  </div>
+  </div>
+  <div class="qz-page-nav">
+      <div class="pull-left link"> 
+        <a class="page-prev" href="javascript:void(0)" onclick="urlPage('2');return false;">上一页</a> 
+        <a class="num" href="javascript:void(0)" onclick="urlPage('1');return false;">1</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('2');return false;">2</a><span>3</span>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('4');return false;">4</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('5');return false;">5</a><a class="num" href="javascript:void(0)" onclick="urlPage('6');return false;">6</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('7');return false;">7</a><a class="num" href="javascript:void(0)" onclick="urlPage('8');return false;">8</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('9');return false;">9</a><a class="num" href="javascript:void(0)" onclick="urlPage('10');return false;">10</a>
+        <a class="num" href="javascript:void(0)" onclick="urlPage('11');return false;">11</a>
+         <a class="page-next" href="javascript:void(0)" onclick="urlPage('4');return false;">下一页</a> 
+         <a class="page-last" href="javascript:void(0)" onclick="urlPage('1282');return false;">尾页</a>共 19228 条记录
+     </div>
+     <div class="pull-left jump">
+        <form method="get" action="/qz/index.php?s=/Home/Payment/index.html" data-nav="#Payment/index" id="mainPageForm">
+            <input type="hidden" name="p" value="3">
+            第<input type="text" name="p" class="txt28" id="jumpPage" onfocus="this.value=''" value="3">页
+           <a href="javascript:void(0)" class="btn_jump page_btm_jump">跳 转</a>
+       </form>                <script>
+            $(function(){
+                $('.page_btm_jump').click(function(){
+                    pageJump();
+                    return false;
+                });
+                $('#mainPageForm').submit(function(){
+                    pageJump();
+                    return false;
+                });
+            });
+                function pageJump(){
+                    var url  = $("#mainPageForm").attr('action');
+                    var str = $('#mainPageForm').serialize();
+                    if (url.indexOf('?') >= 0) {
+                        url += '&' + str;
+                    } else {
+                        url += '?' + str;
+                    }
+                    var data_nav = $("#mainPageForm").attr('data-nav');
+                    conGoToUrlFun(data_nav, url);
+                }
+                function urlPage(p){
+                   $('#jumpPage').val(p);
+                    pageJump();
+                }
+        </script> 
+     </div>
+  </div>
+</body>
+</html>
